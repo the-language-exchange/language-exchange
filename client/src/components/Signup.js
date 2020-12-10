@@ -29,8 +29,8 @@ export default class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    signup(username, password)
+    const { username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = this.state;
+    signup(username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age)
       .then(data => {
         if (data.success) {
           this.setState({
