@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import ProfileList from './components/ProfileList';
+
 import { Route } from 'react-router-dom';
 
 
@@ -31,6 +33,11 @@ class App extends React.Component {
           path='/login'
           render={props => <Login setUser={this.setUser} {...props}/>}
         /> 
+      <Route
+      exact
+      path='/'
+      component={ProfileList}
+      />
     </div>
   );
   }
