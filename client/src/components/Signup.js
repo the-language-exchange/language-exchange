@@ -60,6 +60,7 @@ export default class Signup extends Component {
     return (
       <>
         <h2>Signup</h2>
+        <p>Please provide some information about yourself to find a language exchange who shares your interests.</p>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor='username'>Username: </Form.Label>
