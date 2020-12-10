@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 const userSchema = new Schema({
   username: { 
     type: String,
@@ -15,15 +16,15 @@ const userSchema = new Schema({
   },
   country: { 
     type: String,
-    required: true
+    required: false
   },
   languagesSpoken:{ 
     type: String,
-    required: true
+    required: false
   },
   languagesLearn: { 
     type: String,
-    required: true
+    required: false
   },
   education:{ 
     type: String,
