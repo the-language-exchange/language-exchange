@@ -3,8 +3,8 @@ import React from 'react';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProfileList from './components/ProfileList';
-
 import { Route } from 'react-router-dom';
+import SideBar from './components/SideBar/SideBar';
 
 
 
@@ -23,6 +23,7 @@ class App extends React.Component {
   render () {
   return (
     <div className="App">
+    <SideBar />
      <Route
           exact
           path='/signup'
