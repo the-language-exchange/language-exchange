@@ -6,6 +6,7 @@ import ProfileList from './components/ProfileList';
 import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
 import { Route } from 'react-router-dom';
+import Navbar from './components/Navbar'
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
   render () {
   return (
     <div className="App">
+     <Navbar user={this.state.user} setUser={this.setUser} />
 
      <Route
         exact
@@ -47,7 +49,7 @@ class App extends React.Component {
       <Route
         exact
         path='/myuser/:id'
-        component={MyUserDetails}
+        render={props => <MyUserDetails setUser={this.setUser} {...props}/>}
       />
     </div>
   );

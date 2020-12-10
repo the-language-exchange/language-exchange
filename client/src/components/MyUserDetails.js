@@ -6,6 +6,7 @@ export default class MyUserDetails extends Component {
     user: null,
     username: '',
     email: '',
+    id: ''
      // country: '',
     // languagesSpoken: [],
     // languagesLearn: [],
@@ -25,6 +26,7 @@ export default class MyUserDetails extends Component {
         user: response.data,
         username: response.data.username,
         email: response.data.email,
+        id: response.data._id
         // country: response.data.country,
         // languagesSpoken: response.data.languagesSpoken,
         // languagesLearn: response.data.languagesLearn,
@@ -35,6 +37,8 @@ export default class MyUserDetails extends Component {
         // about: response.data.about,
         // age: response.data.age,
       })
+      console.log(id)
+
     console.log(response.data)
     })
     .catch(err => console.log(err))
@@ -50,13 +54,38 @@ export default class MyUserDetails extends Component {
     return (
     
         <div key={this.state.user.id}>
-          <h1> My Profile Details</h1>
-             <h3>      
-              {this.state.username}            
+          <h1> My User Details </h1>
+            <h3>      
+            {this.state.username}            
             </h3>
-            <h2>      
-              {this.state.email}            
-            </h2>
+            <p>      
+            Email: {this.state.email}           
+            </p>
+            <p>      
+            Country: {this.state.country}     
+            </p>
+            <p>      
+            Languages I speak: {this.state.languagesSpoken}          
+            </p>
+            <p>      
+            Languages I want to learn: {this.state.languagesLearn}         
+            </p>
+            <p>      
+            Education: {this.state.education}         
+            </p>
+            <p>
+            Skills: {this.state.skills}
+            </p>
+            <p>
+            Interests: {this.state.interests}
+            </p>
+            {/* <img src={this.state.picture} alt="picture" /> */}
+            <p>
+            About: {this.state.about}
+            </p>
+            <p>
+            Age: {this.state.age}
+            </p>         
     
         </div>
         )
