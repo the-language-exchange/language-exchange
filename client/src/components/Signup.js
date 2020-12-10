@@ -91,8 +91,98 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          {this.state.messate && (
-            <Alert variant='danger'>{this.state.message}</Alert>
+          <Form.Group>
+            <Form.Label htmlFor='country'>Country: </Form.Label>
+            <Form.Control
+              type='text'
+              name='country'
+              id='country'
+              value={this.state.country}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
+            <Form.Control
+              type='text'
+              name='languagesSpoken'
+              id='languagesSpoken'
+              value={this.state.languagesSpoken}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
+            <Form.Control
+              type='text'
+              name='languagesLearn'
+              id='languagesLearn'
+              value={this.state.languagesLearn}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='education'>Education or Profession: </Form.Label>
+            <Form.Control
+              type='text'
+              name='education'
+              id='education'
+              value={this.state.education}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='skills'>What skills would you like to share? </Form.Label>
+            <Form.Control
+              type='text'
+              name='skills'
+              id='skills'
+              value={this.state.skills}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='interests'>What are you interested in? </Form.Label>
+            <Form.Control
+              type='text'
+              name='interests'
+              id='interests'
+              value={this.state.interests}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
+            <Form.Control
+              type='image'
+              name='picture'
+              id='picture'
+              value={this.state.picture}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='about'>Introduce yourself: </Form.Label>
+            <Form.Control
+              type='text'
+              name='about'
+              id='about'
+              value={this.state.about}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='age'>How old are you? </Form.Label>
+            <Form.Control
+              type='number'
+              name='age'
+              id='age'
+              value={this.state.age}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          {this.state.success && (
+            <Alert variant='danger'>{this.state.success}</Alert>
           )}
           <Button type='submit'>Signup</Button>
         </Form>
