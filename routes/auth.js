@@ -9,16 +9,16 @@ router.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
 
   if (password.length < 8) {
-    return res.status(400).json({ message: 'Your password must be 8 chars minimum' });
+    return res.status(400).json({ success: 'Your password must be 8 chars minimum' });
   }
   if (username === '') {
-    return res.status(400).json({ message: 'Your username cannot be empty' });
+    return res.status(400).json({ success: 'Your username cannot be empty' });
   }
   // check if username exists in database -> show message
   User.findOne({ username: username })
     .then(found => {
       if (found !== null) {
-        return res.status(400).json({ message: 'Your username is already taken' });
+        return res.status(400).json({ success: 'Your username is already taken' });
       } else {
         // hash the password, create the user and send the user to the client
         const salt = bcrypt.genSaltSync();
@@ -32,7 +32,7 @@ router.post('/signup', (req, res, next) => {
             // login with passport:
             req.login(dbUser, err => {
               if (err) {
-                return res.status(500).json({ message: 'Error while attempting to login' })
+                return res.status(500).json({ success: 'Error while attempting to login' })
               }
               // we don't redirect to an html page anymore, we just send the user obj to the client
               return res.status(200).json(dbUser);
@@ -48,14 +48,14 @@ router.post('/signup', (req, res, next) => {
 router.post('/login', (req, res) => {
   passport.authenticate('local', (err, user) => {
     if (err) {
-      return res.status(500).json({ message: 'Error while authenticating' });
+      return res.status(500).json({ success: 'Error while authenticating' });
     }
     if (!user) {
-      return res.status(400).json({ message: 'Wrong credentials' });
+      return res.status(400).json({ success: 'Wrong credentials' });
     }
     req.login(user, err => {
       if (err) {
-        return res.status(500).json({ message: 'Error while attempting to login' })
+        return res.status(500).json({ success: 'Error while attempting to login' })
       }
       return res.status(200).json(user);
     })
@@ -64,7 +64,7 @@ router.post('/login', (req, res) => {
 
 router.delete('/logout', (req, res) => {
     req.logout();
-    res.json({message: 'Successfully logged out'});
+    res.json({success: 'Successfully logged out'});
 })
 
 router.get('/loggedin', (req,res) =>{
