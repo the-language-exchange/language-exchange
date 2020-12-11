@@ -13,13 +13,13 @@ export default class Signup extends Component {
     country: '',
     languagesSpoken: [],
     languagesLearn: [],
-    education: [],
-    skills: [],
-    interests: [],
+    education: '',
+    skills: '',
+    interests: '',
     picture: '',
     about: '',
     age: 0,
-    imageURL: ""
+    imageURL: ''
   }
 
   handleChange = event => {
@@ -32,6 +32,7 @@ export default class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = this.state;
+    console.log(imageURL);
     signup(username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age)
       .then(data => {
         if (data.success) {
@@ -43,9 +44,9 @@ export default class Signup extends Component {
             country: '',
             languagesSpoken: [],
             languagesLearn: [],
-            education: [],
-            skills: [],
-            interests: [],
+            education: '',
+            skills: '',
+            interests: '',
             picture: '',
             about: '',
             age: 0
@@ -177,7 +178,7 @@ export default class Signup extends Component {
               type='file'
               name='picture'
               id='picture'
-              value={this.state.picture}
+              //value={this.state.picture}
               onChange={this.handleFileUpload}
             />
           </Form.Group>

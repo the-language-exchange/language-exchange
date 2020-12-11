@@ -18,14 +18,14 @@ const userSchema = new Schema({
     type: String,
     required: false
   },
-  languagesSpoken:{ 
+  languagesSpoken:[{ 
     type: String,
     required: false
-  },
-  languagesLearn: { 
+  }],
+  languagesLearn: [{ 
     type: String,
     required: false
-  },
+  }],
   education:{ 
     type: String,
     required: false

@@ -7,7 +7,7 @@ const { json } = require('body-parser');
 
 router.post('/signup', (req, res, next) => {
   const { username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = req.body;
-
+  console.log(imageURL);
   if (password.length < 8) {
     return res.status(400).json({ success: 'Your password must be 8 chars minimum' });
   }
@@ -49,6 +49,7 @@ router.post('/signup', (req, res, next) => {
             });
           })
           .catch(err => {
+            console.log(err);
             res.json(err);
           })
       }
