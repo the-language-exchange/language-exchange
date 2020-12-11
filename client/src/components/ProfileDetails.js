@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
+import MessageForm from './MessageForm'
+
+
 
 export default class ProfileDetails extends Component {
   state = {
@@ -86,8 +89,9 @@ export default class ProfileDetails extends Component {
   
         </div>
 
-        <Button type='submit'>Send a Message</Button>
-        {/* <Link to='./messages' > link</Link>     */}
+
+        <MessageForm />
+
 
         </>
         )

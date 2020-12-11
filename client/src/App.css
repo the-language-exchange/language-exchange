@@ -35,6 +35,7 @@
   color: white;
 }
 
+
 .nav a:hover {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
@@ -47,4 +48,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.messageBox{
+  margin: auto;
+  width: 300px;
 }
