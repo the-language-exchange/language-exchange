@@ -18,6 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchField from './SearchField';
 import LanguageField from './LanguageField';
+import AgeSlider from './AgeSlider';
 
 const drawerWidth = 240;
 
@@ -70,14 +71,9 @@ function SideBar(props) {
      <Typography paragraph>Hello</Typography>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
         <SearchField />
         <LanguageField />
+        <AgeSlider />
       </List>
      
     </div>
