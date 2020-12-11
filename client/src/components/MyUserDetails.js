@@ -19,7 +19,8 @@ export default class MyUserDetails extends Component {
     picture: '',
     about: '',
     age: 0,  
-    editForm: false
+    editForm: false,
+    showDetails: true
   }
 
   getData = () => {
@@ -54,7 +55,8 @@ export default class MyUserDetails extends Component {
 
   toggleEditForm = () => {
     this.setState((prevState) => ({
-      editForm: !prevState.editForm
+      editForm: !prevState.editForm,
+      showDetails: !prevState.showDetails
     }))
   }
 
@@ -80,7 +82,7 @@ export default class MyUserDetails extends Component {
       interests: this.state.interests,
       picture: this.state.picture,
       about: this.state.about,
-      age: 0
+      age: this.state.age
 
     })
     .then(response => {
@@ -98,7 +100,8 @@ export default class MyUserDetails extends Component {
         picture: response.data.picture,
         about: response.data.about,
         age: response.data.age,       
-        editForm: false
+        editForm: false,
+        showDetails: true
       })
     })
     .catch(err => {
@@ -110,7 +113,10 @@ export default class MyUserDetails extends Component {
   render() {
     if (!this.state.user) return <h3>Loading ...</h3>
 
-    return (
+    return ( 
+         <>
+
+        {this.state.showDetails && (
     
         <div key={this.state.user.id}>
           <h1> My User Details </h1>
@@ -144,21 +150,26 @@ export default class MyUserDetails extends Component {
             </p>
             <p>
             Age: {this.state.age}
-            </p>  
-            
+            </p>              
             <div>
-
-            <Button onClick={this.toggleEditForm}>Show Edit Form</Button>
-            {this.state.editForm && (
+           <Button onClick={this.toggleEditForm}>Show Edit Form</Button>
+   
+            
+             </div> 
+    
+                
+        </div>
+       
+        )} 
+        {this.state.editForm && (
               <EditProfile
                 {...this.state}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
               />
               )}
-             </div> 
-            
-        </div>
+
+        </>
         )
   }
 }

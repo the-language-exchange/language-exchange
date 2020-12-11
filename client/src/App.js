@@ -3,10 +3,9 @@ import React from 'react';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProfileList from './components/ProfileList';
-import SideBar from './components/SideBar/SideBar';
 import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar'
 
 
@@ -25,9 +24,10 @@ class App extends React.Component {
   render () {
   return (
     <div className="App">
-    <SideBar />
+    
      <Navbar user={this.state.user} setUser={this.setUser} />
 
+    <Switch>
      <Route
         exact
         path='/signup'
@@ -54,6 +54,7 @@ class App extends React.Component {
         path='/myuser/:id'
         render={props => <MyUserDetails setUser={this.setUser} {...props}/>}
       />
+      </Switch>
     </div>
   );
   }
