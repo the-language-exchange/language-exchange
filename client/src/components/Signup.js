@@ -155,7 +155,7 @@ export default class Signup extends Component {
           <Form.Group>
             <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
             <Form.Control
-              type='image'
+              type='text'
               name='picture'
               id='picture'
               value={this.state.picture}

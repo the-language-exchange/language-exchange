@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const User = require('../models/User');
+const uploader = require('../configs/cloudinary.js');
 
 // get all users 
 router.get('/', (req, res, next) =>{
@@ -58,5 +59,12 @@ router.delete('/:id', (req, res, next) => {
     })
 });
 
+
+//route for profile pictures
+router.post('/edit/:id', uploader.single('picture'), (req, res, next) => {
+  console.log(req.body);
+  console.log(req.file);
+  
+});
 
 module.exports = router;
