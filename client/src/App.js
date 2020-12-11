@@ -4,7 +4,6 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import ProfileList from './components/ProfileList';
 import SideBar from './components/SideBar/SideBar';
-
 import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
 import { Route } from 'react-router-dom';
@@ -47,7 +46,8 @@ class App extends React.Component {
       <Route
         exact
         path='/:id'
-        component={ProfileDetails}
+        render={props => <ProfileDetails setUser={this.setUser} {...props}/>}
+        // component={ProfileDetails}
       />
       <Route
         exact
