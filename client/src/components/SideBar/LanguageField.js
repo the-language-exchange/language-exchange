@@ -46,13 +46,14 @@ function getStyles(name, targetValue, theme) {
   };
 }
 
-export default function LanguageField() {
+export default function LanguageField(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [targetValue, setTargetValue] = React.useState([]);
 
   const handleChange = (event) => {
     setTargetValue(event.target.value);
+    props.setCountry(event.target.value)
   };
 
  
@@ -60,7 +61,7 @@ export default function LanguageField() {
   return (
     <div>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Languages</InputLabel>
+        <InputLabel id="demo-mutiple-chip-label">Countries</InputLabel>
         <Select
           labelId="demo-mutiple-chip-label"
           id="demo-mutiple-chip"

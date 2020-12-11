@@ -13,12 +13,13 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function AgeSlider() {
+export default function AgeSlider(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState([18, 37]);
+  const [value, setValue] = React.useState(props.age);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    props.setAge(newValue);
   };
 
   return (
@@ -30,7 +31,7 @@ export default function AgeSlider() {
         value={value}
         onChange={handleChange}
         valueLabelDisplay="auto"
-        min = {18}
+        min = {props.age[0]}
         aria-labelledby="range-slider"
         getAriaValueText={valuetext}
       />

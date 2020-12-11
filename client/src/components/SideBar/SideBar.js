@@ -19,7 +19,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchField from './SearchField';
 import LanguageField from './LanguageField';
 import AgeSlider from './AgeSlider';
-
+import axios from 'axios'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -60,20 +60,39 @@ function SideBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [age, setAge] = React.useState([18,37])
+  const [country, setCountry] = React.useState([])
+  const [language, setLanguage] = React.useState([])
+  const [skillInterest, setSkillInterest] = React.useState('')
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const handleChange = () => {
+    axios.get('api/users')
+    .then(response => {
+    const filtered = response.data.filter(obj =>{
+       return ((obj.age >= age[0] && obj.age <= age[1]) 
+       && obj.country == country 
+       && obj.languagesLearn == language && 
+       (obj.skills == skillInterest || obj.interests == skillInterest) || true )
+     } )
+     props.updateData(filtered)
+    })
+    .catch(err => console.log(err))
+  }
+ 
+  
   const drawer = (
     <div>
       <div className={classes.toolbar} />
      <Typography paragraph>Hello</Typography>
       <Divider />
       <List>
-        <SearchField />
-        <LanguageField />
-        <AgeSlider />
+        
+        <SearchField handleChange = {handleChange} skillInterest = {skillInterest} setSkillInterest = {setSkillInterest}/>
+        <LanguageField handleChange = {handleChange} country = {country} setCountry = {setCountry} />
+        <AgeSlider age = {age} setAge = {setAge} />
+      
       </List>
      
     </div>
