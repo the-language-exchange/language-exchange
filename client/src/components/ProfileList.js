@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -13,7 +13,8 @@ export default class ProfileList extends Component {
     axios.get('api/users')
     .then(response => {
       this.setState({ 
-        users: response.data})
+        users: response.data
+      })
     })
     .catch(err => console.log(err))
   }
@@ -30,7 +31,9 @@ export default class ProfileList extends Component {
         return(
         <div key={user._id}>
               <h3>
+              <Link to={`/${user._id}`}>
               {user.username}
+              </Link>
             </h3>
         </div>
         )
