@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 export default class ProfileDetails extends Component {
   state = {
@@ -47,7 +48,7 @@ export default class ProfileDetails extends Component {
   render() {
 
     return (
-    
+      <>
         <div>
 
           <h1>Profile Details</h1>
@@ -82,9 +83,13 @@ export default class ProfileDetails extends Component {
             <p>
             Age: {this.state.age}
             </p> 
-    
   
         </div>
+
+        <Button type='submit'>Send a Message</Button>
+        {/* <Link to='./messages' > link</Link>     */}
+
+        </>
         )
   }
 }

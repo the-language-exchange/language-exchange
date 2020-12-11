@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
-import EditProfile from './EditProfile'
+import EditProfile from './EditProfile';
+// import { Link } from 'react-router-dom'
 
 
 export default class MyUserDetails extends Component {
@@ -152,11 +153,8 @@ export default class MyUserDetails extends Component {
             Age: {this.state.age}
             </p>              
             <div>
-           <Button onClick={this.toggleEditForm}>Show Edit Form</Button>
-   
-            
+           <Button onClick={this.toggleEditForm}>Show Edit Form</Button>           
              </div> 
-    
                 
         </div>
        

@@ -6,7 +6,9 @@ import ProfileList from './components/ProfileList';
 import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Messages from './components/Messages';
+
 
 
 class App extends React.Component {
@@ -38,6 +40,11 @@ class App extends React.Component {
         path='/login'
         render={props => <Login setUser={this.setUser} {...props}/>}
       /> 
+       <Route
+        exact
+        path='/messages'
+        component={Messages}
+      />
       <Route
         exact
         path='/'
@@ -54,6 +61,7 @@ class App extends React.Component {
         path='/myuser/:id'
         render={props => <MyUserDetails setUser={this.setUser} {...props}/>}
       />
+     
       </Switch>
     </div>
   );
