@@ -82,7 +82,9 @@ export default class ProfileDetails extends Component {
             </p>
             <p>
             Age: {this.state.age}
-            </p>           
+            </p> 
+       
+
     
         </div>
         )
