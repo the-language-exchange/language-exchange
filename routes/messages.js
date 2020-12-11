@@ -19,9 +19,9 @@ router.get('/messages', (req, res, next) =>{
       .then(message => {
         if (!user) {
           console.log('no message');
-          res.status(404).json(messages);
+          res.status(404).json(message);
         } else {
-          res.status(200).json(messages);
+          res.status(200).json(message);
         }
       })
       .catch(err => {
