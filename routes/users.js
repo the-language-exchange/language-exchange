@@ -28,6 +28,7 @@ router.get('/', (req, res, next) =>{
         res.json(err);
       })
   });
+  
 //update users
 router.put('/:id', (req, res, next) => {
   const { username, email } = req.body;
