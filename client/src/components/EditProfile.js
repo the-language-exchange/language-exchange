@@ -94,7 +94,7 @@ export default class EditProfile extends Component {
           <Form.Group>
             <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
             <Form.Control
-              type='image'
+              type='file'
               name='picture'
               id='picture'
               value={this.props.picture}
