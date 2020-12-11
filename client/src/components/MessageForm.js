@@ -7,6 +7,7 @@ export default class MessageForm extends Component {
   state = {
     content: ''
   }
+
   handleChange = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -19,15 +20,13 @@ export default class MessageForm extends Component {
     event.preventDefault();
     // console.log(this.state);
     console.log(this.state);
-    axios.post('/api/projects', {
-      title: this.state.title,
-      description: this.state.description
+    axios.post('/api/messages', {
+      content: this.state.content
     })
       .then(() => {
         // set the form to it's initial state (empty input fields)
         this.setState({
-          title: '',
-          description: ''
+          content:''
         })
         // update the parent components state (in Projects) by calling getData()
         this.props.getData();
@@ -42,6 +41,7 @@ export default class MessageForm extends Component {
       <div  className='messageBox'>
 
       <h4>Send a Message </h4>
+
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor='content'>Message: </Form.Label>
@@ -54,7 +54,6 @@ export default class MessageForm extends Component {
                   />
                 </Form.Group>
                 <Button type='submit'>Send</Button>
-
                 </Form>
       </div>
       </>
