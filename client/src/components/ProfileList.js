@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import SideBar from './SideBar/SideBar';
 
+
+import SideBar from './SideBar/SideBar'
 
 
 export default class ProfileList extends Component {
@@ -29,8 +30,12 @@ export default class ProfileList extends Component {
   }
 
   render() {
+
+
     if (!this.state.users) return <h3>Loading ...</h3>
     return (
+      <>
+      <SideBar></SideBar>
       <div className='users-container'>
       <SideBar updateData = {this.updateData} />
       {this.state.users.map(user => {
@@ -45,6 +50,7 @@ export default class ProfileList extends Component {
         )
       })}
       </div>
+      </>
     )
   }
 }

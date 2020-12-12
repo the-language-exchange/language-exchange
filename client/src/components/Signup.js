@@ -182,6 +182,7 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+
           {this.state.success && (
             <Alert variant='danger'>{this.state.success}</Alert>
           )}

@@ -3,18 +3,17 @@ import axios from 'axios';
 
 export default class ProfileDetails extends Component {
   state = {
-    user: null,
     username: '',
     email: '', 
-    // country: '',
-    // languagesSpoken: [],
-    // languagesLearn: [],
-    // education: [],
-    // skills: [],
-    // interests: [],
-    // picture: '',
-    // about: '',
-    // age: 0
+    country: '',
+    languagesSpoken: [],
+    languagesLearn: [],
+    education: [],
+    skills: [],
+    interests: [],
+    picture: '',
+    about: '',
+    age: 0
   }
 
   getData = () => {
@@ -25,15 +24,15 @@ export default class ProfileDetails extends Component {
         user: response.data,
         username: response.data.username,
         email: response.data.email,
-        // country: response.data.country,
-        // languagesSpoken: response.data.languagesSpoken,
-        // languagesLearn: response.data.languagesLearn,
-        // education: response.data.education,
-        // skills: response.data.skills,
-        // interests: response.data.interests,
-        // picture: response.data.picture,
-        // about: response.data.about,
-        // age: response.data.age,
+        country: response.data.country,
+        languagesSpoken: response.data.languagesSpoken,
+        languagesLearn: response.data.languagesLearn,
+        education: response.data.education,
+        skills: response.data.skills,
+        interests: response.data.interests,
+        picture: response.data.picture,
+        about: response.data.about,
+        age: response.data.age,
 
       })
     console.log(response.data)
@@ -46,11 +45,11 @@ export default class ProfileDetails extends Component {
   }
 
   render() {
-    if (!this.state.user) return <h3>Loading ...</h3>
 
     return (
     
-        <div key={this.state.user.id}>
+        <div>
+
           <h1>Profile Details</h1>
              <h3>      
             {this.state.username}            
@@ -83,9 +82,8 @@ export default class ProfileDetails extends Component {
             <p>
             Age: {this.state.age}
             </p> 
-       
-
     
+  
         </div>
         )
   }
