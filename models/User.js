@@ -18,22 +18,22 @@ const userSchema = new Schema({
     type: String,
     required: false
   },
-  languagesSpoken:{ 
+  languagesSpoken:[{ 
     type: String,
     required: false
-  },
-  languagesLearn: { 
+  }],
+  languagesLearn:[{ 
     type: String,
     required: false
-  },
+  }],
   education:{ 
     type: String,
     required: false
   },
-  skills: { 
+  skills: [{ 
     type: String,
     required: false
-  },
+  }],
   picture: { 
     type: String,
     required: false
@@ -42,10 +42,10 @@ const userSchema = new Schema({
     type: String,
     required: false
   },
-  interests: { 
+  interests: [{ 
     type: String,
     required: false
-  },
+  }],
   age: { 
     type: Number,
     required: false
