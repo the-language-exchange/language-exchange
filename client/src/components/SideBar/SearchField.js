@@ -12,12 +12,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchField(props) {
   const classes = useStyles();
-   const [skillInterest, setSkillInterest] = React.useState(props.skillInterest)
+   const [skillInterest, setSkillInterest] = React.useState('')
+
    const changeHandler = (event) => {
     setSkillInterest(event.target.value)
     props.setSkillInterest(event.target.value)
-    props.handleChange()
+    //props.handleChange()
    }
+
+   React.useEffect(() => {
+    props.handleChange()
+   },[props.skillInterest])
+
   return (
     <div>
       <div className={classes.margin}>

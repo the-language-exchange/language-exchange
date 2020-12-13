@@ -25,7 +25,7 @@ MongoClient.connect(url, function(err, client) {
   //const postsCollection = db.collection("posts");
   // make a bunch of users
   let users = [];
-  for (let i = 0; i < 5000; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const about = faker.lorem.words(500);
@@ -33,8 +33,11 @@ MongoClient.connect(url, function(err, client) {
     const age = Math.floor(Math.random() * (99 - 18 + 1) + 18);
     const skills = _.sampleSize(interestList, _.random(1,6))
     const interests = _.sampleSize(interestList, _.random(1,6))
-    const country = _.sampleSize(interestList, _.random(1,6))
-    const Lan = _.sampleSize(interestList, _.random(1,6))
+    const languagesLearn = _.sampleSize(langList, _.random(1,6))
+    const languagesSpoken = _.sampleSize(langList, _.random(1,4))
+    const country = _.sample(countryList)
+    const education = _.sample(["Master/PhD","Bachelor", "High school", "Less than high school"])
+    const picture = "http://rndimg.com/ImageStore/OilPaintingOrange/300x300_OilPaintingOrange_6dd968db0cc849988783b6731e765dac.jpg"
     let newUser = {
       username:userName,
       email: faker.internet.email(firstName, lastName),
@@ -42,7 +45,12 @@ MongoClient.connect(url, function(err, client) {
       about,
       age,
       skills,
-      interests
+      interests,
+      languagesLearn,
+      languagesSpoken,
+      country,
+      education,
+      picture
     };
     users.push(newUser);
 
@@ -71,7 +79,7 @@ MongoClient.connect(url, function(err, client) {
     // visual feedback again!
     console.log(newPost.title);
   }
-  postsCollection.insertMany(posts);
-  console.log("Database seeded! :)");*/
+  postsCollection.insertMany(posts);*/
+  console.log("Database seeded! :)")
   client.close();
 });

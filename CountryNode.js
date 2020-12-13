@@ -247,4 +247,4 @@ module.exports = [
   {"name": "Yemen", "code": "YE"},
   {"name": "Zambia", "code": "ZM"},
   {"name": "Zimbabwe", "code": "ZW"}
-].filter(country => country.name)
+].map(country => country.name)

@@ -183,4 +183,4 @@ module.exports = [
   { code : 'yo', name : 'Yoruba' },
   { code : 'za', name : 'Zhuang, Chuang' },
   { code : 'zu', name : 'Zulu' }
-].filter(language => language.name);
+].map(language => language.name);

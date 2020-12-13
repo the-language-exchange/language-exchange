@@ -18,8 +18,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchField from './SearchField';
 import LanguageField from './LanguageField';
+import CountryField from './CountryField'
 import AgeSlider from './AgeSlider';
 import axios from 'axios'
+import _ from 'lodash'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -61,21 +63,26 @@ function SideBar(props) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [age, setAge] = React.useState([18,37])
-  const [country, setCountry] = React.useState([])
+  const [country, setCountry] = React.useState('')
   const [language, setLanguage] = React.useState([])
   const [skillInterest, setSkillInterest] = React.useState('')
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
   const handleChange = () => {
     axios.get('api/users')
     .then(response => {
-    const filtered = response.data.filter(obj =>{
-       return ((obj.age >= age[0] && obj.age <= age[1]) 
-       && obj.country == country 
-       && obj.languagesLearn == language && 
-       (obj.skills == skillInterest || obj.interests == skillInterest) || true )
-     } )
+      const filtered = response.data.filter(obj =>{
+        console.log(skillInterest)
+        return(
+          (obj.age >= age[0] && obj.age <= age[1]) && 
+          (language.length == 0 ? true: _.intersection(obj.languagesSpoken, language).length !== 0 )
+          && (obj.skills.join(' ').toLowerCase().includes(skillInterest.toLowerCase())   
+            || obj.interests.join(' ').toLowerCase().includes(skillInterest.toLowerCase()) 
+          )
+        )
+      } )
      props.updateData(filtered)
     })
     .catch(err => console.log(err))
@@ -90,8 +97,9 @@ function SideBar(props) {
       <List>
         
         <SearchField handleChange = {handleChange} skillInterest = {skillInterest} setSkillInterest = {setSkillInterest}/>
-        <LanguageField handleChange = {handleChange} country = {country} setCountry = {setCountry} />
-        <AgeSlider age = {age} setAge = {setAge} />
+        <LanguageField handleChange = {handleChange} language= {language} setLanguage = {setLanguage} />
+        <CountryField handleChange = {handleChange} setCountry = {setCountry} />
+        <AgeSlider age = {age} setAge = {setAge} handleChange = {handleChange} />
       
       </List>
      

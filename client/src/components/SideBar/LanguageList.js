@@ -185,4 +185,4 @@ const languages = [
   { code : 'zu', name : 'Zulu' }
 ];
 
-export default langauges
+export default languages

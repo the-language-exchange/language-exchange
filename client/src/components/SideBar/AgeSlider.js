@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles({
   root: {
-    width: 300,
+    width: 200,
   },
 });
 
@@ -20,6 +20,7 @@ export default function AgeSlider(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     props.setAge(newValue);
+    props.handleChange()
   };
 
   return (
@@ -31,7 +32,8 @@ export default function AgeSlider(props) {
         value={value}
         onChange={handleChange}
         valueLabelDisplay="auto"
-        min = {props.age[0]}
+        min = {18}
+        max = {99}
         aria-labelledby="range-slider"
         getAriaValueText={valuetext}
       />
