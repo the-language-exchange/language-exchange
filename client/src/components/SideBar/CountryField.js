@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Chip from '@material-ui/core/Chip';
-import languages from './LanguageList'
+import countries from './CountryList'
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -45,25 +45,25 @@ function getStyles(name, targetValue, theme) {
   };
 }
 
-export default function LanguageField(props) {
+export default function CountryField(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [targetValue, setTargetValue] = React.useState([]);
 
   const handleChange = (event) => {
-    props.setLanguage(event.target.value)
     setTargetValue(event.target.value);
-   //props.handleChange()
+    props.setCountry(event.target.value)
+   // props.handleChange()
   };
 
-  React.useEffect(() => {
+ React.useEffect(() => {
     props.handleChange()
-  }, [props.language]);
+ },[props.country])
 
   return (
     <div>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Languages</InputLabel>
+        <InputLabel id="demo-mutiple-chip-label">Countries</InputLabel>
         <Select
           labelId="demo-mutiple-chip-label"
           id="demo-mutiple-chip"
@@ -80,9 +80,9 @@ export default function LanguageField(props) {
           )}
           MenuProps={MenuProps}
         >
-          {languages.map(language => (
-            <MenuItem key={language.code} value={language.name} style={getStyles(language.name, targetValue, theme)}>
-              {language.name}
+          {countries.map(country => (
+            <MenuItem key={country.code} value={country.name} style={getStyles(country.name, targetValue, theme)}>
+              {country.name}
             </MenuItem>
           ))}
         </Select>

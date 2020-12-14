@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+
+
 import SideBar from './SideBar/SideBar'
 
 
@@ -19,6 +21,10 @@ export default class ProfileList extends Component {
     .catch(err => console.log(err))
   }
 
+  updateData = (data) => {
+    this.setState({users:data})
+  }
+
   componentDidMount() {
     this.getData();
   }
@@ -29,8 +35,8 @@ export default class ProfileList extends Component {
     if (!this.state.users) return <h3>Loading ...</h3>
     return (
       <>
-      <SideBar></SideBar>
       <div className='users-container'>
+      <SideBar updateData = {this.updateData} />
       {this.state.users.map(user => {
         return(
         <div key={user._id}>
@@ -39,6 +45,12 @@ export default class ProfileList extends Component {
               {user.username}
               </Link>
             </h3>
+            <p><b>Skills:</b> {user.skills.join(', ')}</p>
+            <p><b>Interests:</b> {user.interests.join(', ')}</p>
+            <p><b>Age: </b>{user.age}</p>
+            <p><b>Country: </b>{user.country}</p>
+            <p><b>Languages spoken: </b>{user.languagesSpoken.join(', ')}</p>
+            <p><b>Languages learn: </b>{user.languagesLearn.join(', ')}</p>
         </div>
         )
       })}
