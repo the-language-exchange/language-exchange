@@ -1,4 +1,4 @@
-const languages = [
+module.exports = [
   { code : 'ab', name : 'Abkhazian' },
   { code : 'aa', name : 'Afar' },
   { code : 'af', name : 'Afrikaans' },
@@ -183,6 +183,4 @@ const languages = [
   { code : 'yo', name : 'Yoruba' },
   { code : 'za', name : 'Zhuang, Chuang' },
   { code : 'zu', name : 'Zulu' }
-];
-
-export default languages
+].map(language => language.name);

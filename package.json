@@ -23,9 +23,13 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.4.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "unique-names-generator": "^4.3.1"
   },
   "devDependencies": {
+    "faker": "^5.1.0",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.6.3",
     "nodemon": "^1.12.1"
   }
 }

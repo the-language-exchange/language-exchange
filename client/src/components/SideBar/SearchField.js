@@ -10,8 +10,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchField() {
+export default function SearchField(props) {
   const classes = useStyles();
+   const [skillInterest, setSkillInterest] = React.useState('')
+
+   const changeHandler = (event) => {
+    setSkillInterest(event.target.value)
+    props.setSkillInterest(event.target.value)
+    //props.handleChange()
+   }
+
+   React.useEffect(() => {
+    props.handleChange()
+   },[props.skillInterest])
 
   return (
     <div>
@@ -21,7 +32,11 @@ export default function SearchField() {
             <SearchIcon fontSize = "small"/>
           </Grid>
           <Grid item>
-            <TextField id="input-with-icon-grid" label="Search" />
+            <TextField id="input-with-icon-grid"
+            label="Search" 
+            value = {skillInterest} 
+            onChange = {changeHandler} 
+          />
           </Grid>
         </Grid>
       </div>
