@@ -53,10 +53,12 @@ export default function CountryField(props) {
   const handleChange = (event) => {
     setTargetValue(event.target.value);
     props.setCountry(event.target.value)
-    props.handleChange()
+   // props.handleChange()
   };
 
- 
+ React.useEffect(() => {
+    props.handleChange()
+ },[props.country])
 
   return (
     <div>
