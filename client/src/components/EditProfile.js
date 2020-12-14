@@ -3,6 +3,8 @@ import { Form, Button } from 'react-bootstrap';
 
 export default class EditProfile extends Component {
 
+ 
+
   render() {
     return (
       <div>
@@ -97,8 +99,8 @@ export default class EditProfile extends Component {
               type='file'
               name='picture'
               id='picture'
-              value={this.props.picture}
-              onChange={this.props.handleChange}
+              //value={this.state.picture}
+              onChange={event => this.props.handleFileUpload (event)}
             />
           </Form.Group>
           <Form.Group>
