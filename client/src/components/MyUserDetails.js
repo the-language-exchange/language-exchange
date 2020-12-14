@@ -22,6 +22,7 @@ export default class MyUserDetails extends Component {
     age: 0,  
     editForm: false,
     showDetails: true
+
   }
 
   getData = () => {
@@ -109,6 +110,9 @@ export default class MyUserDetails extends Component {
       console.log(err);
     })
 }
+
+
+
   
 
   render() {
@@ -145,7 +149,9 @@ export default class MyUserDetails extends Component {
             <p>
             Interests: {this.state.interests}
             </p>
-            {/* <img src={this.state.picture} alt="picture" /> */}
+  
+            <img src={this.state.picture} alt="profile-picture" style={{width: '200px'}}/>
+  
             <p>
             About: {this.state.about}
             </p>
