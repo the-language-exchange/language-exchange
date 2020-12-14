@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
+import service from '../services/picture-upload.js';
 
 export default class Signup extends Component {
 
@@ -12,12 +13,13 @@ export default class Signup extends Component {
     country: '',
     languagesSpoken: [],
     languagesLearn: [],
-    education: [],
-    skills: [],
-    interests: [],
+    education: '',
+    skills: '',
+    interests: '',
     picture: '',
     about: '',
-    age: 0
+    age: 0,
+    imageURL: ''
   }
 
   handleChange = event => {
@@ -29,8 +31,9 @@ export default class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = this.state;
-    signup(username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age)
+    const { username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = this.state;
+    console.log(imageURL);
+    signup(username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age)
       .then(data => {
         if (data.success) {
           this.setState({
@@ -41,9 +44,9 @@ export default class Signup extends Component {
             country: '',
             languagesSpoken: [],
             languagesLearn: [],
-            education: [],
-            skills: [],
-            interests: [],
+            education: '',
+            skills: '',
+            interests: '',
             picture: '',
             about: '',
             age: 0
@@ -54,6 +57,23 @@ export default class Signup extends Component {
           this.props.history.push('./');
         }
       })
+  }
+
+  // client/src/ProjectForm
+  handleFileUpload = e => {
+    const uploadData = new FormData();
+    uploadData.append("picture", e.target.files[0]);
+
+    service.handleUpload(uploadData)
+      .then(response => {
+        const imageURL = response.secure_url;
+        const publicID = response.public_id;
+        console.log(response);
+        this.setState({ imageURL: imageURL, publicID: publicID });
+      })
+      .catch(err => {
+        console.log("Error while uploading the file: ", err);
+      });
   }
 
   render() {
@@ -155,11 +175,11 @@ export default class Signup extends Component {
           <Form.Group>
             <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
             <Form.Control
-              type='image'
+              type='file'
               name='picture'
               id='picture'
-              value={this.state.picture}
-              onChange={this.handleChange}
+              //value={this.state.picture}
+              onChange={this.handleFileUpload}
             />
           </Form.Group>
           <Form.Group>

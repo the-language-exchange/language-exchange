@@ -8,6 +8,7 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
+const cors = require("cors");
 
 
 mongoose
@@ -31,6 +32,13 @@ const MongoStore = require('connect-mongo')(session);
 require('./configs/passport.js');
 
 const app = express();
+
+// allow access to the API from different domains/origins
+app.use(cors({
+  // this could be multiple domains/origins, but we will allow just our React app
+  origin: [ "http://localhost:3000" ]
+}));
+
 
 app.use(
   session({

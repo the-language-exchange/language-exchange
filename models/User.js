@@ -22,6 +22,7 @@ const userSchema = new Schema({
     type: String,
     required: false
   }],
+
   languagesLearn:[{ 
     type: String,
     required: false
