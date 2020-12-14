@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import service from '../services/picture-upload.js';
 import { Button } from 'react-bootstrap';
 import EditProfile from './EditProfile';
 // import { Link } from 'react-router-dom'
@@ -21,7 +22,9 @@ export default class MyUserDetails extends Component {
     about: '',
     age: 0,  
     editForm: false,
-    showDetails: true
+    showDetails: true,
+    imageURL : ''
+
   }
 
   getData = () => {
@@ -68,6 +71,7 @@ export default class MyUserDetails extends Component {
     })
   }
 
+
   handleSubmit = event => {
     event.preventDefault();
     const id = this.props.match.params.id;
@@ -81,7 +85,7 @@ export default class MyUserDetails extends Component {
       education: this.state.education,
       skills: this.state.skills,
       interests: this.state.interests,
-      picture: this.state.picture,
+      picture: this.state.imageURL,
       about: this.state.about,
       age: this.state.age
 
@@ -109,6 +113,24 @@ export default class MyUserDetails extends Component {
       console.log(err);
     })
 }
+
+
+handleFileUpload = e => {
+  const uploadData = new FormData();
+  uploadData.append("picture", e.target.files[0]);
+
+  service.handleUpload(uploadData)
+    .then(response => {
+      const imageURL = response.secure_url;
+      const publicID = response.public_id;
+      console.log(response);
+      this.setState({ imageURL: imageURL, publicID: publicID });
+    })
+    .catch(err => {
+      console.log("Error while uploading the file: ", err);
+    });
+}
+
   
 
   render() {
@@ -145,7 +167,9 @@ export default class MyUserDetails extends Component {
             <p>
             Interests: {this.state.interests}
             </p>
-            <img src={this.state.picture} alt="picture" style={{width: '200px'}}/>
+  
+            <img src={this.state.picture} alt="profile-picture" style={{width: '200px'}}/>
+  
             <p>
             About: {this.state.about}
             </p>
@@ -164,6 +188,7 @@ export default class MyUserDetails extends Component {
                 {...this.state}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
+                handleFileUpload={this.handleFileUpload}
               />
               )}
 
