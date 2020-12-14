@@ -43,6 +43,7 @@ Card.Img {
 .nav {
   background-color: gray;
 }
+
 .nav a {
   color: white;
 }
@@ -82,5 +83,14 @@ Card.Img {
   flex-direction: row;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
   
+.editFormDiv{
+  margin: auto;
+  width: 400px;
+}
+
+.signupDiv{
+  margin: auto;
+  width: 300px;
 }
