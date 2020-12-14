@@ -1,7 +1,80 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap';
+import { login } from '../services/auth.js';
+import service from '../services/picture-upload.js';
 
 export default class EditProfile extends Component {
+
+  state = {
+    username: '',
+    password: '',
+    success: '',
+    email: '', 
+    country: '',
+    languagesSpoken: [],
+    languagesLearn: [],
+    education: '',
+    skills: '',
+    interests: '',
+    picture: '',
+    about: '',
+    age: 0,
+    imageURL: ''
+  }
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    }); 
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = this.state;
+    console.log(imageURL);
+    login(username, imageURL, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age)
+      .then(data => {
+        if (data.success) {
+          this.setState({
+            success: data.success,
+            username: '',
+            password: '',
+            email: '', 
+            country: '',
+            languagesSpoken: [],
+            languagesLearn: [],
+            education: '',
+            skills: '',
+            interests: '',
+            picture: '',
+            about: '',
+            age: 0
+          })
+        } else {
+          // put the user in the state of App.js
+          this.props.setUser(data);
+          this.props.history.push('./');
+        }
+      })
+  }
+
+  // client/src/ProjectForm
+  handleFileUpload = e => {
+    const uploadData = new FormData();
+    uploadData.append("picture", e.target.files[0]);
+
+    service.handleUpload(uploadData)
+      .then(response => {
+        const imageURL = response.secure_url;
+        const publicID = response.public_id;
+        console.log(response);
+        this.setState({ imageURL: imageURL, publicID: publicID });
+      })
+      .catch(err => {
+        console.log("Error while uploading the file: ", err);
+      });
+  }
 
   render() {
     return (
@@ -97,8 +170,8 @@ export default class EditProfile extends Component {
               type='file'
               name='picture'
               id='picture'
-              value={this.props.picture}
-              onChange={this.props.handleChange}
+              //value={this.state.picture}
+              onChange={this.handleFileUpload}
             />
           </Form.Group>
           <Form.Group>
