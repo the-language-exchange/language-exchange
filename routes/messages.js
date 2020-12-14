@@ -4,7 +4,7 @@ const Message = require('../models/Message');
 
 // get all messages 
 router.get('/messages', (req, res, next) =>{
-  Message.find()
+  Message.find({ $or: [ {receiver:req.user._id }, { sender: req.user._id } ] })
   .then(messages => {
     res.status(200).json(messages);
     })
@@ -17,7 +17,7 @@ router.get('/messages', (req, res, next) =>{
   router.get('/messages/:id', (req, res, next) => {
     Message.findById(req.params.id)
       .then(message => {
-        if (!user) {
+        if (!req.user) {
           console.log('no message');
           res.status(404).json(message);
         } else {
@@ -29,6 +29,27 @@ router.get('/messages', (req, res, next) =>{
       })
   });
   
+  router.post('messages/send/:id', (req, res) => {
+      const {content, id} = req.body
+      const sender = req.user._id 
+      const receiver = id
+      Message.findOneAndUpdate({sender, receiver},{$setOnInsert:{sender,receiver}})
+      .then(data => data.content.length == 0  )
+     /* let isFirstMessage;
+     Message.create({sender: req.user._id, receiver: id, content})
+     .then(response =>{
+        console.log('Successfuly created!')
+        res.status(400).json(response)
+     })
+     .then()
+     .catch(err => console.log(err))*/
+  })
+  
+  
+
+    // do something with the document
+
+
 // //update users
 // router.put('/:id', (req, res, next) => {
 //   const {  username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = req.body;

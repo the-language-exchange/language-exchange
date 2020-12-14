@@ -92,5 +92,6 @@ app.use('/api/auth', auth);
 const users = require('./routes/users');
 app.use('/api/users', users);
 
-
+const messages = require('./routes/messages')
+app.use('/api', messages);
 module.exports = app;

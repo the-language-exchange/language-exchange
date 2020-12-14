@@ -90,7 +90,7 @@ export default class ProfileDetails extends Component {
         </div>
 
 
-        <MessageForm />
+        <MessageForm receiverID = {id}/>
 
 
         </>

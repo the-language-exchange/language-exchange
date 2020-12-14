@@ -48,7 +48,7 @@ export default class MessageForm extends Component {
                   <Form.Control
                     type='text'
                     name='content'
-                    id='content'
+                    id= {this.props.id}
                     value={this.state.content}
                     onChange={this.handleChange}
                   />
