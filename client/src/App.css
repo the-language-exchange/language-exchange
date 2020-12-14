@@ -31,6 +31,7 @@
 .nav {
   background-color: gray;
 }
+
 .nav a {
   color: white;
 }
@@ -51,6 +52,16 @@
 }
 
 .messageBox{
+  margin: auto;
+  width: 300px;
+}
+
+.editFormDiv{
+  margin: auto;
+  width: 400px;
+}
+
+.signupDiv{
   margin: auto;
   width: 300px;
 }

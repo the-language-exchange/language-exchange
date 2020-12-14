@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
 import service from '../services/picture-upload.js';
+import CountryList from './SideBar/CountryList'
+// import LanguageList from './SideBar/LanguageList'
 
 export default class Signup extends Component {
 
@@ -21,6 +23,7 @@ export default class Signup extends Component {
     age: 0,
     imageURL: ''
   }
+
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -78,7 +81,7 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <>
+      <div className = 'signupDiv'>
         <h2>Signup</h2>
         <p>Please provide some information about yourself to find a language exchange who shares your interests.</p>
         <Form onSubmit={this.handleSubmit}>
@@ -112,16 +115,43 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+          {/* Country Selector */}
+
           <Form.Group>
             <Form.Label htmlFor='country'>Country: </Form.Label>
             <Form.Control
-              type='text'
+              type='selector'
+              as='select'
               name='country'
               id='country'
               value={this.state.country}
               onChange={this.handleChange}
-            />
+            >
+              {CountryList.map(country => {
+                return  (<option>{country.name}</option>)
+              })}          
+            </Form.Control>
           </Form.Group>
+
+
+          {/* <Form.Group>
+            <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
+            <Form.Control
+              type='selector'
+              as='select'
+              multiple
+              name='languagesSpoken'
+              id='languagesSpoken'
+              value={this.state.languagesSpoken}
+              onChange={this.handleChange}
+            >
+             {LanguageList.map(language => {
+                return  (<option value ={language.name}>{language.name}</option>)
+              })}
+
+            </Form.Control>
+          </Form.Group> */}
+
           <Form.Group>
             <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
             <Form.Control
@@ -132,6 +162,7 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+
           <Form.Group>
             <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
             <Form.Control
@@ -208,7 +239,7 @@ export default class Signup extends Component {
           )}
           <Button type='submit'>Signup</Button>
         </Form>
-      </>
+      </div>
     )
   }
 }
