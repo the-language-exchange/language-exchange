@@ -7,7 +7,7 @@ export default class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div className = 'editFormDiv'>
         <h2>Edit Profile</h2>
         <Form onSubmit={this.props.handleSubmit}>
           <Form.Group>

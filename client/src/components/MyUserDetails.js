@@ -168,8 +168,7 @@ handleFileUpload = e => {
             Interests: {this.state.interests}
             </p>
   
-            <img src={this.state.picture} alt="profile-picture" style={{width: '200px'}}/>
-  
+            <img src={this.state.picture} alt="profile" style={{width: '200px'}}/>
             <p>
             About: {this.state.about}
             </p>
