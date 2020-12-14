@@ -28,9 +28,22 @@
   color: #61dafb;
 }
 
+.button {
+  background-color: #ff9900;
+}
+
+.card {
+  background-color: #00c0cc;
+}
+
+Card.Img {
+  max-width: 100px;
+}
+
 .nav {
   background-color: gray;
 }
+
 .nav a {
   color: white;
 }
@@ -51,6 +64,33 @@
 }
 
 .messageBox{
+  margin: auto;
+  width: 300px;
+}
+
+.profile-list {
+  margin: 0 0 0 100;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 900px;
+}
+
+.users-container {
+  margin: 0 0 0 100;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+  
+.editFormDiv{
+  margin: auto;
+  width: 400px;
+}
+
+.signupDiv{
   margin: auto;
   width: 300px;
 }
