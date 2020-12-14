@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './SideBar/SideBar'
+import { Card, Button} from 'react-bootstrap'
+
 
 
 export default class ProfileList extends Component {
@@ -37,18 +39,28 @@ export default class ProfileList extends Component {
       <SideBar updateData = {this.updateData} />
       {this.state.users.map(user => {
         return(
-        <div key={user._id}>
-              <h3>
-              <Link to={`/${user._id}`}>
-              {user.username}
-              </Link>
-            </h3>
-            <p><b>Skills:</b> {user.skills.join(', ')}</p>
-            <p><b>Interests:</b> {user.interests.join(', ')}</p>
-            <p><b>Age: </b>{user.age}</p>
-            <p><b>Country: </b>{user.country}</p>
-            <p><b>Languages spoken: </b>{user.languagesSpoken.join(', ')}</p>
-            <p><b>Languages learn: </b>{user.languagesLearn.join(', ')}</p>
+        <div className='profile-list' key={user._id}>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={user.picture} style={{ height: '18rem' }}/>
+            <Card.Body>
+              <Card.Title>
+                <h3>
+                  <Link to={`/${user._id}`}>
+                  {user.username}
+                  </Link>
+                </h3>
+                </Card.Title>
+              <Card.Text>
+                <p><b>Skills:</b> {user.skills.join(', ')}</p>
+                <p><b>Interests:</b> {user.interests.join(', ')}</p>
+                <p><b>Age: </b>{user.age}</p>
+                <p><b>Country: </b>{user.country}</p>
+                <p><b>Languages spoken: </b>{user.languagesSpoken.join(', ')}</p>
+                <p><b>Languages learn: </b>{user.languagesLearn.join(', ')}</p>
+              </Card.Text>
+              <Link to={`/${user._id}`} className='button' style={{ color: '#ff9900' }} variant="primary">View Profile</Link>
+            </Card.Body>
+          </Card>
         </div>
         )
       })}
