@@ -3,9 +3,8 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
 import service from '../services/picture-upload.js';
 import CountryList from './SideBar/CountryList'
-import LanguageList from './SideBar/LanguageList'
+// import LanguageList from './SideBar/LanguageList'
 
-console.log(CountryList)
 export default class Signup extends Component {
 
   state = {
@@ -128,13 +127,9 @@ export default class Signup extends Component {
               value={this.state.country}
               onChange={this.handleChange}
             >
-
               {CountryList.map(country => {
                 return  (<option>{country.name}</option>)
-              })}
-
-
-            
+              })}          
             </Form.Control>
           </Form.Group>
 
@@ -157,7 +152,6 @@ export default class Signup extends Component {
             </Form.Control>
           </Form.Group> */}
 
-
           <Form.Group>
             <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
             <Form.Control
@@ -168,7 +162,6 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-
 
           <Form.Group>
             <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>

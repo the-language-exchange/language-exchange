@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap';
+import CountryList from './SideBar/CountryList'
 
 export default class EditProfile extends Component {
 
@@ -35,12 +36,17 @@ export default class EditProfile extends Component {
           <Form.Group>
             <Form.Label htmlFor='country'>Country: </Form.Label>
             <Form.Control
-              type='text'
-              id='country'
+              type='selector'
+              as='select'
               name='country'
+              id='country'
               value={this.props.country}
               onChange={this.props.handleChange}
-            />
+            >
+              {CountryList.map(country => {
+                return  (<option>{country.name}</option>)
+              })}
+            </Form.Control>
           </Form.Group>
 
           <Form.Group>

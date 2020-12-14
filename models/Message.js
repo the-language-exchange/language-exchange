@@ -3,18 +3,16 @@ const Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
   receiver : { 
-    type: String, 
+    type: ObjectId, 
     ref: 'User' },
-  content: String,
-  date: new Date (),
   sender: { 
-    type: String, 
+    type: ObjectId, 
     ref: 'User' },
-  reply: [{ 
+  message: [{ 
     type : ObjectId, 
     ref: 'User', 
+    date: new Date (),
     content: String,
-    date: new Date ()
   }]
 });
 
