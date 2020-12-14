@@ -24,10 +24,16 @@ export default function Navbar(props) {
       <Link to={`/myuser/${props.user._id}`}>My Profile</Link>
      </Nav.Brand>
 
+     <Nav.Brand>
+      <Link to={'/messages'}>Messages</Link>
+     </Nav.Brand>
+
     <Nav.Brand>
       <Link to='/' onClick={() => handleLogout(props)}>Logout</Link>
     </Nav.Brand>
+    
     </>
+   
     ) : (   
       <>
     <Nav.Brand>
