@@ -145,7 +145,7 @@ export default class MyUserDetails extends Component {
             <p>
             Interests: {this.state.interests}
             </p>
-            {/* <img src={this.state.picture} alt="picture" /> */}
+            <img src={this.state.picture} alt="picture" style={{width: '200px'}}/>
             <p>
             About: {this.state.about}
             </p>
