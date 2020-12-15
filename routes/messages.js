@@ -9,10 +9,10 @@ router.get('/messages', (req, res, next) =>{
     res.status(200).json(messages);
     })
     .catch(err => {
-      res.json(err);
+      res.json(err);   
     })
   })
-
+ 
 // get a specfic message
   router.get('/messages/:id', (req, res, next) => {
     Message.findById(req.params.id)
@@ -29,21 +29,21 @@ router.get('/messages', (req, res, next) =>{
       })
   });
   
-  router.post('messages/send/:id', (req, res) => {
-      const {content, id} = req.body
-      const sender = req.user._id 
-      const receiver = id
-      Message.findOneAndUpdate({sender, receiver},{$setOnInsert:{sender,receiver}})
-      .then(data => data.content.length == 0  )
-     /* let isFirstMessage;
-     Message.create({sender: req.user._id, receiver: id, content})
-     .then(response =>{
-        console.log('Successfuly created!')
-        res.status(400).json(response)
-     })
-     .then()
-     .catch(err => console.log(err))*/
-  })
+  router.post('messages/send/:id', (req, res, next) => {
+    console.log('hello')
+    /*const {content, id} = req.body
+    console.log("aaa")
+    const sender = req.user._id 
+    const receiver = req.params.id
+    const query = {sender, receiver}
+    const update = {sender,receiver, $push:{content} }
+    const options = { upsert: true, new: true, setDefaultsOnInsert: true }
+  Message.findOneAndUpdate(query, update, options)
+  .then(data => res.status(200).json(data))
+  .catch(err => console.log(err))*/
+})
+   
+  
   
   
 

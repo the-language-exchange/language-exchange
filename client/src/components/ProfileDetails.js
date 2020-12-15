@@ -4,7 +4,6 @@ import axios from 'axios';
 import MessageForm from './MessageForm'
 
 
-
 export default class ProfileDetails extends Component {
   state = {
     username: '',
@@ -19,7 +18,7 @@ export default class ProfileDetails extends Component {
     about: '',
     age: 0
   }
-
+  
   getData = () => {
     const id = this.props.match.params.id;
     axios.get(`/api/users/${id}`)
@@ -79,7 +78,7 @@ export default class ProfileDetails extends Component {
             <p>
             Interests: {this.state.interests}
             </p>
-            <img src={this.state.picture} alt="picture" style={{width: '200px'}}/>
+            <img src={this.state.picture} alt="profile" style={{width: '200px'}}/>
             <p>
             About: {this.state.about}
             </p>
@@ -90,7 +89,7 @@ export default class ProfileDetails extends Component {
         </div>
 
 
-        <MessageForm receiverID = {id}/>
+        <MessageForm receiverID = {this.props.match.params.id}/>
 
 
         </>
