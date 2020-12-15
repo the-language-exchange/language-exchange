@@ -53,8 +53,16 @@ export default class ProfileDetails extends Component {
 
     return (
       <>
-          <div className='profile-box' key={this.state.id}>
-          <img alt="profile" className="profile-pic" src={this.state.picture} style={{ width: '20%', height: '20%'}}/>
+        <div className='profile-box' key={this.state.id}>
+          <div className='profile-box-left'>
+          <img alt="profile" className="profile-pic" src={this.state.picture} style={{ width: '14rem', height: '14rem'}}/>         
+              <div className='profile-sub-info'>
+              <p><b>Age:</b> {this.state.age}</p> 
+              <p><b>Country:</b> {this.state.country}</p>
+              <p><b>Speaking:</b> {this.state.languagesSpoken.join(', ')}</p>
+              <p><b>Learning:</b> {this.state.languagesLearn.join(', ')}</p>
+              </div>
+          </div>
           <div className='profile-detail'>
           <Card style={{ width: '100%', height: '100%'}}>
             <Card.Body>
@@ -64,12 +72,12 @@ export default class ProfileDetails extends Component {
                 </h3>
                 </Card.Title>
                 <Card.Text>
-                  <p> <b>Skills:</b> {this.state.skills.join(', ')}</p>
+                  <p><b>Skills:</b> {this.state.skills.join(', ')}</p>
                   <p><b>Interests:</b> {this.state.interests.join(', ')}</p>
-                  <p><b>Age: </b>{this.state.age}</p>
+                  {/* <p><b>Age: </b>{this.state.age}</p>
                   <p><b>Country: </b>{this.state.country}</p>
                   <p><b>Languages I speak: </b>{this.state.languagesSpoken.join(', ')}</p>
-                  <p><b>Learning: </b>{this.state.languagesLearn.join(', ')}</p>
+                  <p><b>Learning: </b>{this.state.languagesLearn.join(', ')}</p> */}
                   <p><b>Education: </b>{this.state.education} </p> 
                   <p><b>About: </b>{this.state.about}</p>
                   

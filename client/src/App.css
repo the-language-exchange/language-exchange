@@ -61,16 +61,6 @@
 }
 
 
-/* .profile-list {
-  margin: 0 0 0 250;
-  max-width: 900px;
-  border: solid 0.5px;
-  border-color: #023047;
-  display: flex;
-  justify-content: space-around;
-  max-width: 900px;
-} */
-
 .users-container {
   background-color: #023047; 
   color: #023047;
@@ -87,9 +77,7 @@ body {
   color: #ffb703;
 }
 
-/* .profile-list {
-  
-} */
+
 
 .card-img-top {
   border: solid 0.5px;
@@ -161,12 +149,23 @@ Card.Img {
 	align-items: stretch;
   align-content: stretch;
   margin: auto;
- 
+  padding: 10px;
+  max-width: 600px;
 }
 .profile-detail{
   text-align: left;
 }
+.profile-box-left{
+  margin-right: 10px;
 
+}
+
+.profile-sub-info{
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+ 
+}
 /* .messagesCenter{
   margin: auto;
   width: 300px;
