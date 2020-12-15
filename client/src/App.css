@@ -63,7 +63,7 @@ Card.Img {
   }
 }
 
-.messageBox{
+.messageForm{
   margin: auto;
   width: 300px;
 }
@@ -94,3 +94,41 @@ Card.Img {
   margin: auto;
   width: 300px;
 }
+.messagesInbox{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.profile-box{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+  align-content: stretch;
+  margin: auto;
+ 
+}
+.profile-detail{
+  text-align: left;
+
+}
+
+/* .messagesCenter{
+  margin: auto;
+  width: 300px;
+} */
+
+/* .text-left{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+  align-content: stretch;
+  width: 300px;
+} */
