@@ -22,7 +22,7 @@ export default class MessageForm extends Component {
     event.preventDefault();
     // console.log(this.state);
     console.log(this.state);
-    axios.post('/api/messages', {
+    axios.post('/api/messages/send/'+this.props.receiverID, {
       content: this.state.content
     })
       .then(() => {
@@ -50,10 +50,10 @@ export default class MessageForm extends Component {
                   <Form.Control
                     type='text'
                     name='content'
+                    id= {this.props.id}
                     placeholder='Write a message'
                     as="textarea" 
-                    rows={3} 
-                    id='content'
+                    rows={3}
                     value={this.state.content}
                     onChange={this.handleChange}
                   />

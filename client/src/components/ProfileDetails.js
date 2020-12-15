@@ -20,7 +20,7 @@ export default class ProfileDetails extends Component {
     about: '',
     age: 0
   }
-
+  
   getData = () => {
     const id = this.props.match.params.id;
     axios.get(`/api/users/${id}`)
@@ -117,6 +117,8 @@ export default class ProfileDetails extends Component {
 
         </div>
 
+
+        <MessageForm receiverID = {this.props.match.params.id}/>
       
 
 
