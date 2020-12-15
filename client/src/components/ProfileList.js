@@ -63,7 +63,7 @@ export default class ProfileList extends Component {
                 <p><b>Speaking: </b>{user.languagesSpoken.join(', ')}</p>
                 <p><b>Learning: </b>{user.languagesLearn.join(', ')}</p>
               </Card.Text>
-              <Link to={`/${user._id}`} className='button' style={{ color: '#fb8500' }} variant="primary">Find out more</Link>
+              <Link to={`/${user._id}`} className='button' style={{ color: '#5465ff' }} variant="primary">Find out more</Link>
             </Card.Body>
           </Card>
         </div>
