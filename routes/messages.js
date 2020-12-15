@@ -5,8 +5,10 @@ const Message = require('../models/Message');
 // get all messages 
 router.get('/messages', (req, res, next) =>{
   Message.find({ $or: [ {receiver:req.user._id }, { sender: req.user._id } ] })
+  populate([ 'sender', 'receiver'])
   .then(messages => {
-    res.status(200).json(messages);
+    modifiedMessage = messages.map(messages => ({...messages, client:req.user}))
+    res.status(200).json(modifiedMessage);
     })
     .catch(err => {
       res.json(err);   

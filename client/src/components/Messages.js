@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 // import MessageForm from './MessageForm';
 import axios from 'axios';
-import {Card , Button, Form, ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import MessageList from './MessageList'
+import MessageCard from './MessageCard'
+
 // import axios from 'axios';
 
 export default class Messages extends Component {
   state = {
-    content : [],
-    sender : '',
-    receiver : '',
-    date: Date,
+    clickedMessage : '',
+    messageID:null,
+    allMessages: null,
     showMessage: false
   }
 
-
+  getMessage = (messageID) => {
+    const filtered = this.state.allMessages.filter(message => message._id == messageID)
+    this.setState({messageID, clickedMessage:filtered.message})
+  }
   getData = () => {
     axios.get('/api/messages')
       .then(response => {
@@ -43,7 +46,7 @@ export default class Messages extends Component {
     event.preventDefault();
     // console.log(this.state);
     console.log(this.state);
-    axios.post('/api/messages', {
+    axios.post('/api/messages/', {
       content: this.state.content
     })
       .then(() => {
@@ -64,55 +67,14 @@ export default class Messages extends Component {
     }))
   }
 
-  render() {
 
+
+  render() {
+    if(!this.state.messages) return <p>Loading...</p>
     return (
     <div className='messagesInbox'>
-      <ListGroup className="text-left">
-      <ListGroup.Item>
-      <Link onClick={this.toggleMessage}>Username A</Link>
-      </ListGroup.Item>
-      <ListGroup.Item>
-      <Link onClick={this.toggleMessage}>Username B</Link>
-      </ListGroup.Item>
-      <ListGroup.Item>
-      <Link onClick={this.toggleMessage}>Username C </Link>
-      </ListGroup.Item>
-      </ListGroup>
-
-      <div className='messagesCenter'>
-        <Card className="text-center">
-          <Card.Header>Message from Username A</Card.Header>
-            <Card.Body>
-            <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-            <p style={{fontSize: '10px'}}>Wrote by Sender</p>
-            </Card.Text>     
-            <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-            <p style={{fontSize: '10px'}}>Wrote by Receiver</p>
-            </Card.Text>     
-              <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                  <Form.Label htmlFor='content'> </Form.Label>
-                  <Form.Control
-                    type='text'
-                    name='content'
-                    placeholder='Write a message'
-                    as="textarea" 
-                    rows={3} 
-                    id='content'
-                    value={this.state.content}
-                    onChange={this.handleChange}
-                  />
-                </Form.Group>
-                <Button type='submit'>Send</Button>
-               </Form>
-               </Card.Body>
-               <Card.Footer className="text-muted">2 days ago{this.state.date}</Card.Footer>
-          
-        </Card>
-      </div>
+     <MessageList allMessages = {this.state.allMessages} getMessage = {this.getMessage} />
+     <MessageCard />
     </div>      
     )
   }
