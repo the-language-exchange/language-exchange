@@ -28,18 +28,6 @@
   color: #61dafb;
 }
 
-.button {
-  background-color: #ff9900;
-}
-
-.card {
-  background-color: #00c0cc;
-}
-
-Card.Img {
-  max-width: 100px;
-}
-
 .nav {
   background-color: gray;
 }
@@ -68,21 +56,76 @@ Card.Img {
   width: 300px;
 }
 
-.profile-list {
-  margin: 0 0 0 100;
+/* .profile-list {
+  margin: 0 0 0 250;
   max-width: 900px;
+  border: solid 0.5px;
+  border-color: #023047;
   display: flex;
   justify-content: space-around;
   max-width: 900px;
-}
+} */
 
 .users-container {
-  margin: 0 0 0 100;
+  margin-left: 250px;
+  padding: 50px;
   max-width: 1500px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+
+body {
+  color: #023047;
+}
+
+div.profile-list {
+  
+}
+
+.card-img-top {
+  border: solid 0.5px;
+  border-color: #8ecae6;
+  object-fit: cover;
+}
+
+.card-body {
+  border: solid 0.5px;
+  border-color: #8ecae6;
+  color: #023047;
+}
+
+.div.card-body {
+
+}
+
+h3 {
+  color: #023047;
+}
+
+.p {
+  color: #023047;
+}
+
+.p.card-text {
+  color: #023047;
+}
+
+.a.button {
+  color: #023047;
+}
+
+.button {
+  background-color: #ff9900;
+}
+
+.card {
+  background-color: #00c0cc;
+}
+
+Card.Img {
+  max-width: 100px;
 }
   
 .editFormDiv{
@@ -94,3 +137,4 @@ Card.Img {
   margin: auto;
   width: 300px;
 }
+

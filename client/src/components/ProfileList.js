@@ -35,11 +35,12 @@ export default class ProfileList extends Component {
     if (!this.state.users) return <h3>Loading ...</h3>
     return (
       <>
-      <div className='users-container'>
+      <div>
       <SideBar updateData = {this.updateData} />
+      <div className='users-container'>
       {this.state.users.map(user => {
         return(
-        <div className='profile-list' key={user._id}>
+        <div key={user._id}>
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={user.picture} style={{ height: '18rem' }}/>
             <Card.Body>
@@ -64,6 +65,7 @@ export default class ProfileList extends Component {
         </div>
         )
       })}
+      </div>
       </div>
       </>
     )
