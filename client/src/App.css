@@ -80,7 +80,7 @@ body {
   color: #023047;
 }
 
-div.profile-list {
+.profile-list {
   
 }
 
@@ -96,7 +96,7 @@ div.profile-list {
   color: #023047;
 }
 
-.div.card-body {
+.card-body {
 
 }
 
@@ -104,20 +104,12 @@ h3 {
   color: #023047;
 }
 
-.p {
-  color: #023047;
-}
-
-.p.card-text {
-  color: #023047;
-}
-
-.a.button {
+.card-text {
   color: #023047;
 }
 
 .button {
-  background-color: #ff9900;
+  color: #023047;
 }
 
 .card {
