@@ -38,7 +38,7 @@ export default class MessageForm extends Component {
   render() {
    return (
       <>
-      <div  className='messageBox'>
+      <div  className='messageForm'>
 
       {/* <h4>Send a Message </h4> */}
 
