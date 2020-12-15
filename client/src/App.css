@@ -55,6 +55,11 @@
   margin: auto;
   width: 300px;
 }
+.messageFormProfile{
+  margin: 10px auto;
+  width: 300px;
+}
+
 
 /* .profile-list {
   margin: 0 0 0 250;
@@ -82,9 +87,9 @@ body {
   color: #ffb703;
 }
 
-.profile-list {
+/* .profile-list {
   
-}
+} */
 
 .card-img-top {
   border: solid 0.5px;
@@ -134,6 +139,11 @@ Card.Img {
   width: 300px;
 }
 
+.loginDiv{
+  margin: auto;
+  width: 300px;
+}
+
 .messagesInbox{
   display: flex;
 	flex-direction: row;
@@ -155,7 +165,6 @@ Card.Img {
 }
 .profile-detail{
   text-align: left;
-
 }
 
 /* .messagesCenter{

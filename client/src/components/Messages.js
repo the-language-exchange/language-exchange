@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default class Messages extends Component {
   state = {
-    content : [],
+    content : '',
     sender : '',
     receiver : '',
     date: Date,

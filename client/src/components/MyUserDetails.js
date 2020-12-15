@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import service from '../services/picture-upload.js';
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import EditProfile from './EditProfile';
 // import { Link } from 'react-router-dom'
 
@@ -141,44 +141,32 @@ handleFileUpload = e => {
 
         {this.state.showDetails && (
     
-        <div key={this.state.user.id}>
-          <h1> My User Details </h1>
-            <h3>      
-            {this.state.username}            
-            </h3>
-            <p>      
-            Email: {this.state.email}           
-            </p>
-            <p>      
-            Country: {this.state.country}     
-            </p>
-            <p>      
-            Languages I speak: {this.state.languagesSpoken}          
-            </p>
-            <p>      
-            Languages I want to learn: {this.state.languagesLearn}         
-            </p>
-            <p>      
-            Education: {this.state.education}         
-            </p>
-            <p>
-            Skills: {this.state.skills}
-            </p>
-            <p>
-            Interests: {this.state.interests}
-            </p>
-  
-            <img src={this.state.picture} alt="profile" style={{width: '200px'}}/>
-            <p>
-            About: {this.state.about}
-            </p>
-            <p>
-            Age: {this.state.age}
-            </p>              
-            <div>
-           <Button onClick={this.toggleEditForm}>Show Edit Form</Button>           
+          <div className='profile-box' key={this.state.id}>
+          <img alt="profile" className="profile-pic" src={this.state.picture} style={{ width: '20%', height: '20%'}}/>
+          <div className='profile-detail'>
+          <Card style={{ width: '100%', height: '100%'}}>
+            <Card.Body>
+              <Card.Title>
+                <h3>
+                  {this.state.username}
+                </h3>
+                </Card.Title>
+              <Card.Text>
+                <p> <b>Skills:</b> {this.state.skills.join(', ')}</p>
+                <p><b>Interests:</b> {this.state.interests.join(', ')}</p>
+                <p><b>Age: </b>{this.state.age}</p>
+                <p><b>Country: </b>{this.state.country}</p>
+                <p><b>Languages I speak: </b>{this.state.languagesSpoken.join(', ')}</p>
+                <p><b>Learning: </b>{this.state.languagesLearn.join(', ')}</p>
+                <p><b>Education: </b>{this.state.education} </p> 
+                <p><b>About: </b>{this.state.about}</p>              
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <div>
+           <Button onClick={this.toggleEditForm}>Edit my profile</Button>           
              </div> 
-                
+          </div>
         </div>
        
         )} 
