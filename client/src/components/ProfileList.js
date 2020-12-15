@@ -37,6 +37,10 @@ export default class ProfileList extends Component {
       <>
       <div>
       <SideBar updateData = {this.updateData} />
+      <div className='welcome'>
+      <h2 className='h2'> Welcome to The Language Exchange App</h2>
+      <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
+      </div>
       <div className='users-container'>
       {this.state.users.map(user => {
         return(
@@ -46,7 +50,7 @@ export default class ProfileList extends Component {
             <Card.Body>
               <Card.Title>
                 <h3>
-                  <Link to={`/${user._id}`}>
+                  <Link to={`/${user._id}`} className='card-title'>
                   {user.username}
                   </Link>
                 </h3>
@@ -59,7 +63,7 @@ export default class ProfileList extends Component {
                 <p><b>Speaking: </b>{user.languagesSpoken.join(', ')}</p>
                 <p><b>Learning: </b>{user.languagesLearn.join(', ')}</p>
               </Card.Text>
-              <Link to={`/${user._id}`} className='button' style={{ color: '#ff9900' }} variant="primary">View Profile</Link>
+              <Link to={`/${user._id}`} className='button' style={{ color: '#fb8500' }} variant="primary">Find out more</Link>
             </Card.Body>
           </Card>
         </div>
