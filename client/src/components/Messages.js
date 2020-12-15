@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import MessageForm from './MessageForm';
 import axios from 'axios';
-import {Card , Button, Form} from 'react-bootstrap';
+import {Card , Button, Form, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 // import axios from 'axios';
 
@@ -9,7 +9,9 @@ export default class Messages extends Component {
   state = {
     content : [],
     sender : '',
-    receiver : ''
+    receiver : '',
+    date: Date,
+    showMessage: false
   }
 
 
@@ -29,32 +31,68 @@ export default class Messages extends Component {
     this.getData();
   }
 
+  handleChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    // console.log(this.state);
+    console.log(this.state);
+    axios.post('/api/messages', {
+      content: this.state.content
+    })
+      .then(() => {
+        // set the form to it's initial state (empty input fields)
+        this.setState({
+          content:''
+        })
+        // update the parent components state (in Projects) by calling getData()
+        this.props.getData();
+      })
+      .catch(err => console.log(err))
+
+  }
+
+  toggleMessage = () => {
+    this.setState((prevState) => ({
+      showMessage: !prevState.showMessage
+    }))
+  }
+
   render() {
 
     return (
     <div className='messagesInbox'>
-      <Card className="text-left">
-      <Card.Header>
-      <Link>Sender A {this.state.sender}</Link>
-      </Card.Header>
-      <Card.Header>
-      <Link>Sender B {this.state.sender}</Link>
-      </Card.Header>
-      <Card.Header>
-      <Link>Sender C {this.state.sender}</Link>
-      </Card.Header>
-      </Card>
+      <ListGroup className="text-left">
+      <ListGroup.Item>
+      <Link onClick={this.toggleMessage}>Username A</Link>
+      </ListGroup.Item>
+      <ListGroup.Item>
+      <Link onClick={this.toggleMessage}>Username B</Link>
+      </ListGroup.Item>
+      <ListGroup.Item>
+      <Link onClick={this.toggleMessage}>Username C </Link>
+      </ListGroup.Item>
+      </ListGroup>
 
       <div className='messagesCenter'>
-
         <Card className="text-center">
-          <Card.Header>Message from Sender A {this.state.sender}</Card.Header>
+          <Card.Header>Message from Username A</Card.Header>
             <Card.Body>
             <Card.Text>
             With supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-          
-        <Form onSubmit={this.handleSubmit}>
+            <p style={{fontSize: '10px'}}>Wrote by Sender</p>
+            </Card.Text>     
+            <Card.Text>
+            With supporting text below as a natural lead-in to additional content.
+            <p style={{fontSize: '10px'}}>Wrote by Receiver</p>
+            </Card.Text>     
+              <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor='content'> </Form.Label>
                   <Form.Control
@@ -68,10 +106,10 @@ export default class Messages extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
-                <Button type='submit'>Reply</Button>
+                <Button type='submit'>Send</Button>
                </Form>
                </Card.Body>
-               <Card.Footer className="text-muted">2 days ago</Card.Footer>
+               <Card.Footer className="text-muted">2 days ago{this.state.date}</Card.Footer>
           
         </Card>
       </div>

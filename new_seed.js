@@ -28,7 +28,7 @@ MongoClient.connect(url, function(err, client) {
   for (let i = 0; i < 100; i += 1) {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
-    const about = faker.lorem.words(500);
+    const about = faker.lorem.words(20);
     const userName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] });
     const age = Math.floor(Math.random() * (99 - 18 + 1) + 18);
     const skills = _.sampleSize(interestList, _.random(1,6))

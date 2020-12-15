@@ -5,7 +5,9 @@ import axios from 'axios';
 
 export default class MessageForm extends Component {
   state = {
-    content: ''
+    sender: '',
+    content: '', 
+    receiver : ''
   }
 
   handleChange = event => {
