@@ -67,7 +67,9 @@
 } */
 
 .users-container {
-  margin-left: 250px;
+  background-color: #023047; 
+  color: #023047;
+  margin-left: 240px;
   padding: 50px;
   max-width: 1500px;
   display: flex;
@@ -77,7 +79,7 @@
 }
 
 body {
-  color: #023047;
+  color: #ffb703;
 }
 
 .profile-list {
@@ -94,13 +96,15 @@ body {
   border: solid 0.5px;
   border-color: #8ecae6;
   color: #023047;
+  background-color: #c1e0ee;
 }
 
-.card-body {
-
-}
 
 h3 {
+  color: #023047;
+}
+
+a {
   color: #023047;
 }
 
@@ -113,7 +117,7 @@ h3 {
 }
 
 .card {
-  background-color: #00c0cc;
+  background-color: #ffb703;
 }
 
 Card.Img {

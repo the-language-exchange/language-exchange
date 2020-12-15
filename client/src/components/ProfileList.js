@@ -52,12 +52,12 @@ export default class ProfileList extends Component {
                 </h3>
                 </Card.Title>
               <Card.Text>
-                <p><b>Skills:</b> {user.skills.join(', ')}</p>
-                <p><b>Interests:</b> {user.interests.join(', ')}</p>
+                <p><b>Skills:</b> {user.skills.splice(0,2).join(', ')}</p>
+                <p><b>Interests:</b> {user.interests.splice(0,2).join(', ')}</p>
                 <p><b>Age: </b>{user.age}</p>
                 <p><b>Country: </b>{user.country}</p>
-                <p><b>Languages spoken: </b>{user.languagesSpoken.join(', ')}</p>
-                <p><b>Languages learn: </b>{user.languagesLearn.join(', ')}</p>
+                <p><b>Speaking: </b>{user.languagesSpoken.join(', ')}</p>
+                <p><b>Learning: </b>{user.languagesLearn.join(', ')}</p>
               </Card.Text>
               <Link to={`/${user._id}`} className='button' style={{ color: '#ff9900' }} variant="primary">View Profile</Link>
             </Card.Body>
