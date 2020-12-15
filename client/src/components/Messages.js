@@ -34,10 +34,17 @@ export default class Messages extends Component {
     return (
     <div className='messagesInbox'>
       <Card className="text-left">
-      <Card.Header>Sender A {this.state.sender}</Card.Header>
-      <Card.Header>Sender B {this.state.sender}</Card.Header>
-      <Card.Header>Sender C {this.state.sender}</Card.Header>
+      <Card.Header>
+      <Link>Sender A {this.state.sender}</Link>
+      </Card.Header>
+      <Card.Header>
+      <Link>Sender B {this.state.sender}</Link>
+      </Card.Header>
+      <Card.Header>
+      <Link>Sender C {this.state.sender}</Link>
+      </Card.Header>
       </Card>
+
       <div className='messagesCenter'>
 
         <Card className="text-center">
