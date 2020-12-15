@@ -5,7 +5,9 @@ import axios from 'axios';
 
 export default class MessageForm extends Component {
   state = {
-    content: ''
+    sender: '',
+    content: '', 
+    receiver : ''
   }
 
   handleChange = event => {
@@ -38,7 +40,7 @@ export default class MessageForm extends Component {
   render() {
    return (
       <>
-      <div  className='messageBox'>
+      <div  className='messageForm'>
 
       {/* <h4>Send a Message </h4> */}
 
