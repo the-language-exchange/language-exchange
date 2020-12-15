@@ -13,7 +13,7 @@ const handleLogout = props => {
 
 export default function Navbar(props) {
   return (
-    <Nav className='nav justify-content-end' bg='primary'>
+    <Nav className='nav justify-content-end'>
     <Nav.Brand>
       <Link to='/'>Home</Link>
     </Nav.Brand>
