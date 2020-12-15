@@ -9,9 +9,8 @@ const messageSchema = new Schema({
     type: Schema.ObjectId, 
     ref: 'User' },
   message: [{ 
-    type : Schema.ObjectId, 
-    ref: 'User', 
-    date: new Date (),
+    ID:{type:Schema.ObjectId, ref: 'User'},
+    date:{type:Date, default:new Date().toISOString()},
     content: String,
   }]
 });

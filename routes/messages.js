@@ -29,19 +29,22 @@ router.get('/messages', (req, res, next) =>{
       })
   });
   
-  router.post('messages/send/:id', (req, res, next) => {
+  router.post('/messages/send/:id', (req, res, next) => {
     console.log('hello')
-    /*const {content, id} = req.body
+    const {content, id} = req.body
     console.log("aaa")
     const sender = req.user._id 
     const receiver = req.params.id
+    const message = {content, ID:sender}
     const query = {sender, receiver}
-    const update = {sender,receiver, $push:{content} }
-    const options = { upsert: true, new: true, setDefaultsOnInsert: true }
+    const update = {sender,receiver, $push:{message} }
+    const options = { upsert: true, new:true, setDefaultsOnInsert: true }
   Message.findOneAndUpdate(query, update, options)
   .then(data => res.status(200).json(data))
-  .catch(err => console.log(err))*/
-})
+  .catch(err => console.log(err))
+
+  /*Message.create({}) */
+});
    
   
   
