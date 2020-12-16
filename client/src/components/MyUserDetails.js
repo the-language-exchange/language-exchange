@@ -3,7 +3,7 @@ import axios from 'axios';
 import service from '../services/picture-upload.js';
 import { Button, Card } from 'react-bootstrap';
 import EditProfile from './EditProfile';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default class MyUserDetails extends Component {
@@ -43,6 +43,7 @@ export default class MyUserDetails extends Component {
         skills: response.data.skills,
         interests: response.data.interests,
         picture: response.data.picture,
+        imageURL: response.data.picture,
         about: response.data.about,
         age: response.data.age,
       })
@@ -150,9 +151,7 @@ handleFileUpload = e => {
               <p><b>Speaking:</b> {this.state.languagesSpoken.join(', ')}</p>
               <p><b>Learning:</b> {this.state.languagesLearn.join(', ')}</p>
               </div>
-            <div>
-                <Button onClick={this.toggleEditForm}>Edit my profile</Button>           
-            </div> 
+   
           </div>
           <div className='profile-detail'>
           <Card style={{ width: '100%', height: '100%'}}>
@@ -161,16 +160,17 @@ handleFileUpload = e => {
                 <h3>
                   {this.state.username}
                 </h3>
+                <hr></hr>
                 </Card.Title>
               <Card.Text>
                 <p><b>Skills:</b> {this.state.skills.join(', ')}</p>
                   <p><b>Interests:</b> {this.state.interests.join(', ')}</p>
-                  {/* <p><b>Age: </b>{this.state.age}</p>
-                  <p><b>Country: </b>{this.state.country}</p>
-                  <p><b>Languages I speak: </b>{this.state.languagesSpoken.join(', ')}</p>
-                  <p><b>Learning: </b>{this.state.languagesLearn.join(', ')}</p> */}
                   <p><b>Education: </b>{this.state.education} </p> 
-                  <p><b>About: </b>{this.state.about}</p>             
+                  <p><b>About: </b>{this.state.about}</p>  
+                  <div>
+                  <hr></hr>
+                  <Link className='button' onClick={this.toggleEditForm}>Edit my profile</Link>           
+                  </div>            
               </Card.Text>
             </Card.Body>
           </Card>

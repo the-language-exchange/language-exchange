@@ -13,6 +13,11 @@
   }
 }
 
+/* #root{
+  background-color: #bfd7ff; 
+  
+} */
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -29,7 +34,7 @@
 }
 
 .nav {
-  background-color: #788bff;
+  background-color: #6777df;
 }
 
 .nav a {
@@ -60,7 +65,7 @@
 
 
 .users-container {
-  background-color: #9bb1ff; 
+  /* background-color: #9bb1ff;  */
   color: #023047;
   margin-left: 240px;
   padding: 30px;
@@ -71,11 +76,6 @@
   flex-wrap: wrap;
 }
 
-body {
-  color: #ffb703;
-}
-
-
 
 .card {
   border: solid 0.5px;
@@ -83,6 +83,7 @@ body {
   border-radius: 60px;
   margin-bottom: 20px;
   color: #e2fdff;
+  height: 98%
 }
 
 .card-img-top {
@@ -93,9 +94,9 @@ body {
 }
 
 .card-body {
-  color: #e2fdff;
   background-color: #e2fdff;
   padding: 50px 0;
+  
 }
 
 
@@ -108,9 +109,11 @@ body {
 }
 
 .button {
-  color: #023047;
+  color:   #5465ff;
 }
-
+.button:hover {
+  color: #5465ff;
+}
 
 
 Card.Img {
@@ -122,10 +125,14 @@ Card.Img {
   background-color: #bfd7ff; 
   margin-left: 240px;
   padding-top: 20px;
+
 }
 
 .h2 {
   background-color: #bfd7ff; 
+  color: #5465ff;
+}
+.h1{
   color: #5465ff;
 }
 
@@ -137,8 +144,10 @@ Card.Img {
 }
   
 .editFormDiv{
-  margin: auto;
+  padding: 20px;
+  margin: 10px auto;
   width: 400px;
+  background-color: #e2fdff;
 }
 
 .signupDiv{
@@ -170,20 +179,47 @@ Card.Img {
   margin: auto;
   padding: 10px;
   max-width: 600px;
+  border-radius: 5px;
+
 }
 .profile-detail{
   text-align: left;
 }
 .profile-box-left{
   margin-right: 10px;
+}
+
+.profile-pic {
+  border: solid 0.5px;
+  border-color: #e2fdff;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.profile-sub-info{
+  border: solid 0.3px  #e2fdff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  margin: 10px 0px;
+  background-color: #e2fdff;
 
 }
 
-.profile-sub-info{
+.messageFormProfile{
+  color: black;
   padding: 10px;
-  text-align: left;
-  font-size: 12px;
- 
+  background-color: #e2fdff;
+
+}
+
+.btn.btn-primary {
+  background-color:  #5465ff;
+  border:  #5465ff;
+}
+
+.btn.btn-primary:hover {
+  background-color:  #707efa;
 }
 /* .messagesCenter{
   margin: auto;
@@ -191,7 +227,7 @@ Card.Img {
 } */
 
 /* .text-left{
-  display: flex;
+  display: flex
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: flex-start;

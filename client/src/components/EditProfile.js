@@ -105,7 +105,7 @@ export default class EditProfile extends Component {
               type='file'
               name='picture'
               id='picture'
-              //value={this.state.picture}
+              // value={this.props.picture}
               onChange={event => this.props.handleFileUpload (event)}
             />
           </Form.Group>

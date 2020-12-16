@@ -30,8 +30,6 @@ export default class ProfileList extends Component {
   }
 
   render() {
-
-
     if (!this.state.users) return <h3>Loading ...</h3>
     return (
       <>
@@ -40,9 +38,9 @@ export default class ProfileList extends Component {
       <div className='welcome'>
       <h2 className='h2'> Welcome to The Language Exchange App</h2>
       <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
+      <hr></hr>
       </div>
       <div className='users-container'>
-      <SideBar updateData = {this.updateData} />
       {this.state.users.map(user => {
         return(
         <div className='profile-list' key={user._id}>
