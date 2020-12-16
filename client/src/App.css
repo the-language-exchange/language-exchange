@@ -13,11 +13,6 @@
   }
 }
 
-/* #root{
-  background-color: #bfd7ff; 
-  
-} */
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -74,17 +69,27 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+
 }
+
 
 
 .card {
-  border: solid 0.5px;
+  border: solid 2px;
   border-color: #e2fdff;
-  border-radius: 60px;
+  border-radius: 2px;
   margin-bottom: 20px;
   color: #e2fdff;
-  height: 98%
+  height: 98%;
+  padding: 1px;
 }
+
+.card:hover {
+  border: solid 2px;
+  border-color : #e2fdff;
+  border-radius: 4px;
+}
+
 
 .card-img-top {
   border: solid 0.5px;
@@ -121,11 +126,16 @@ Card.Img {
 }
 
 
-.welcome {
+
+.welcome-left {
+  display: flex;
+  justify-content: row;
   background-color: #bfd7ff; 
   margin-left: 240px;
   padding-top: 20px;
-
+}
+.welcome {
+  padding-top: 20px;
 }
 
 .h2 {
@@ -227,7 +237,6 @@ Card.Img {
   color: white;
 }
 
-
 /* ////// BUBBLES */
 
 /* CSS talk bubble */
@@ -322,7 +331,6 @@ Card.Img {
   top: 38px;
 	bottom: auto;
   border: 12px solid;
-  color: red;
 	border-color: lightyellow transparent transparent lightyellow;
 }
 /* Right triangle placed top right flush. */
@@ -399,150 +407,3 @@ Card.Img {
   -webkit-margin-after: 0em;
 }
 
-
-
-
-
-
-
-
-
-/* 
-Right triangle, left side slightly down
-.tri-right.border.left-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -40px;
-	right: auto;
-  top: 30px;
-	bottom: auto;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.left-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -20px;
-	right: auto;
-  top: 38px;
-	bottom: auto;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
-} */
-
-/*Right triangle, placed bottom left side slightly in*/
-/* .tri-right.border.btm-left:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: -8px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
-}
-.tri-right.btm-left:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 0px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 22px solid;
-	border-color: transparent transparent transparent lightyellow;
-}
-/*  
-/* Right triangle, placed bottom left side slightly in*/ 
-/* .tri-right.border.btm-left-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 30px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 transparent transparent #666;
-}
-.tri-right.btm-left-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 38px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow transparent transparent lightyellow;
-} */
-
-/*Right triangle, placed bottom right side slightly in*/
-/* .tri-right.border.btm-right-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 30px;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.btm-right-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 38px;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
-} */
-/*
-	left: -8px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
-	left: 0px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 22px solid;
-	border-color: transparent transparent transparent lightyellow;
-
-/*Right triangle, placed bottom right side slightly in*/
-/* .tri-right.border.btm-right:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -8px;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.btm-right:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 0px;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
-} */
