@@ -3,8 +3,6 @@ import React from 'react';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProfileList from './components/ProfileList';
-
-
 import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
 import { Route, Switch } from 'react-router-dom';

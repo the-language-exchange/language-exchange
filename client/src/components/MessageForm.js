@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 
+
 export default class MessageForm extends Component {
   state = {
     sender: '',
@@ -40,10 +41,7 @@ export default class MessageForm extends Component {
   render() {
    return (
       <>
-      <div  className='messageForm'>
-
-      {/* <h4>Send a Message </h4> */}
-
+      <div  className='messageFormProfile'>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor='content'>Send a Message: </Form.Label>

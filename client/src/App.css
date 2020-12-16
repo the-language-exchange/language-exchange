@@ -29,7 +29,7 @@
 }
 
 .nav {
-  background-color: gray;
+  background-color: #788bff;
 }
 
 .nav a {
@@ -41,6 +41,7 @@
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
 }
+
 
 @keyframes App-logo-spin {
   from {
@@ -55,22 +56,14 @@
   margin: auto;
   width: 300px;
 }
+/* profile list */
 
-/* .profile-list {
-  margin: 0 0 0 250;
-  max-width: 900px;
-  border: solid 0.5px;
-  border-color: #023047;
-  display: flex;
-  justify-content: space-around;
-  max-width: 900px;
-} */
 
 .users-container {
-  background-color: #023047; 
+  background-color: #9bb1ff; 
   color: #023047;
   margin-left: 240px;
-  padding: 50px;
+  padding: 30px;
   max-width: 1500px;
   display: flex;
   flex-direction: row;
@@ -82,30 +75,32 @@ body {
   color: #ffb703;
 }
 
-.profile-list {
-  
+
+
+.card {
+  border: solid 0.5px;
+  border-color: #e2fdff;
+  border-radius: 60px;
+  margin-bottom: 20px;
+  color: #e2fdff;
 }
 
 .card-img-top {
   border: solid 0.5px;
-  border-color: #8ecae6;
+  border-color: #e2fdff;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .card-body {
-  border: solid 0.5px;
-  border-color: #8ecae6;
-  color: #023047;
-  background-color: #c1e0ee;
+  color: #e2fdff;
+  background-color: #e2fdff;
+  padding: 50px 0;
 }
 
 
-h3 {
-  color: #023047;
-}
-
-a {
-  color: #023047;
+.card-title {
+  color: #5465ff;
 }
 
 .card-text {
@@ -116,12 +111,29 @@ a {
   color: #023047;
 }
 
-.card {
-  background-color: #ffb703;
-}
+
 
 Card.Img {
   max-width: 100px;
+}
+
+
+.welcome {
+  background-color: #bfd7ff; 
+  margin-left: 240px;
+  padding-top: 20px;
+}
+
+.h2 {
+  background-color: #bfd7ff; 
+  color: #5465ff;
+}
+
+.welcome-text {
+  background-color: #bfd7ff;
+  color: #5465ff;
+  padding-bottom: 10px;
+  margin-bottom: 0; 
 }
   
 .editFormDiv{
@@ -130,6 +142,11 @@ Card.Img {
 }
 
 .signupDiv{
+  margin: auto;
+  width: 300px;
+}
+
+.loginDiv{
   margin: auto;
   width: 300px;
 }
@@ -151,13 +168,23 @@ Card.Img {
 	align-items: stretch;
   align-content: stretch;
   margin: auto;
- 
+  padding: 10px;
+  max-width: 600px;
 }
 .profile-detail{
   text-align: left;
+}
+.profile-box-left{
+  margin-right: 10px;
 
 }
 
+.profile-sub-info{
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+ 
+}
 /* .messagesCenter{
   margin: auto;
   width: 300px;
