@@ -41,8 +41,8 @@ export default class ProfileList extends Component {
       <h2 className='h2'> Welcome to The Language Exchange App</h2>
       <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
       </div>
-      <div className='users-container'>
       <SideBar updateData = {this.updateData} />
+      <div className='users-container'>
       {this.state.users.map(user => {
         return(
         <div className='profile-list' key={user._id}>
