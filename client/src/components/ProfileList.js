@@ -42,7 +42,6 @@ export default class ProfileList extends Component {
     return (
       <>
       <div>
-      <SideBar updateData = {this.updateData} />
       <div className='welcome-left'>
       <img  style={{ width: '10rem', backgroundColor: '#5465ff' }} alt='exchangeWhite' src={exchangeWhite}/>
       <div className='welcome'>
@@ -51,6 +50,8 @@ export default class ProfileList extends Component {
       <hr></hr>
       </div>
       </div>
+      <SideBar updateData = {this.updateData} />
+
       <div className='users-container'>
       {this.state.users.map(user => {
         return(

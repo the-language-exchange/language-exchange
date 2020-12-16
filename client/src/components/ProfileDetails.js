@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 // import { Button } from '@material-ui/core';
 import { Card } from 'react-bootstrap'
-import MessageForm from './MessageFormOld'
+import MessageForm from './MessageForm'
 
 
 export default class ProfileDetails extends Component {

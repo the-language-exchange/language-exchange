@@ -7,7 +7,7 @@ import ProfileDetails from './components/ProfileDetails';
 import MyUserDetails from './components/MyUserDetails';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Messages from './components/MessagesOld';
+import Messages from './components/Messages';
 
 
 
