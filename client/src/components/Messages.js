@@ -14,52 +14,37 @@ export default class Messages extends Component {
     showMessage: false
   }
 
-  getMessage = (messageID) => {
-    const filtered = this.state.allMessages.filter(message => message._id == messageID)
-    this.setState({messageID, clickedMessage:filtered.message})
-  }
+
   getData = () => {
     axios.get('/api/messages')
       .then(response => {
-        console.log(response);
+        console.log(response.data,  "  messages of all");
         // put them into the state
         this.setState({
-          messages: response.data
+          allMessages: response.data
         })
       })
       .catch(err => console.log(err))
+  }
+
+  getMessage = (messageID) => {
+    const filtered = this.state.allMessages.filter(message => message._doc._id == messageID)
+    console.log(filtered, ' msg filtered')
+    this.setState({messageID, clickedMessage:filtered[0]._doc.message})
+  }
+
+  replyMessage = (message) => {
+    this.setState(prevState => ({
+      clickedMessage: [...prevState.clickedMessage, message]
+    }))
   }
 
   componentDidMount() {
     this.getData();
   }
 
-  handleChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    // console.log(this.state);
-    console.log(this.state);
-    axios.post('/api/messages/', {
-      content: this.state.content
-    })
-      .then(() => {
-        // set the form to it's initial state (empty input fields)
-        this.setState({
-          content:''
-        })
-        // update the parent components state (in Projects) by calling getData()
-        this.props.getData();
-      })
-      .catch(err => console.log(err))
-
-  }
+  
 
   toggleMessage = () => {
     this.setState((prevState) => ({
@@ -70,11 +55,20 @@ export default class Messages extends Component {
 
 
   render() {
-    if(!this.state.messages) return <p>Loading...</p>
+    if(!this.state.allMessages) return <p>Loading...</p>
     return (
     <div className='messagesInbox'>
-     <MessageList allMessages = {this.state.allMessages} getMessage = {this.getMessage} />
-     <MessageCard />
+     <MessageList 
+     allMessages = {this.state.allMessages} 
+     getMessage = {this.getMessage}
+     getData = {this.getData}
+     />
+     <MessageCard 
+     replyMessage = {this.replyMessage} 
+     messageID = {this.state.messageID}
+     clickedMessage = {this.state.clickedMessage}
+     allMessages ={this.state.allMessages}
+    />
     </div>      
     )
   }
