@@ -2,11 +2,13 @@ const express = require('express');
 const router  = express.Router();
 const Message = require('../models/Message');
 
-// get all messages 
+// get all messages belonging to client
 router.get('/messages', (req, res, next) =>{
   Message.find({ $or: [ {receiver:req.user._id }, { sender: req.user._id } ] })
+  .populate([ 'sender', 'receiver', 'message.user'])
   .then(messages => {
-    res.status(200).json(messages);
+    modifiedMessage = messages.map(messages => ({...messages, client:req.user}))
+    res.status(200).json(modifiedMessage);
     })
     .catch(err => {
       res.json(err);   
@@ -29,15 +31,14 @@ router.get('/messages', (req, res, next) =>{
       })
   });
   
+  //send message to a user
   router.post('/messages/send/:id', (req, res, next) => {
-    console.log('hello')
     const {content, id} = req.body
-    console.log("aaa")
     const sender = req.user._id 
     const receiver = req.params.id
-    const message = {content, ID:sender}
+    const message = {content, user:sender}
     const query = {sender, receiver}
-    const update = {sender,receiver, $push:{message} }
+    const update = {sender,receiver, $push:{message:{user:sender, content}} }
     const options = { upsert: true, new:true, setDefaultsOnInsert: true }
   Message.findOneAndUpdate(query, update, options)
   .then(data => res.status(200).json(data))
@@ -46,8 +47,20 @@ router.get('/messages', (req, res, next) =>{
   /*Message.create({}) */
 });
    
-  
-  
+//send reply 
+  router.post('/messages/reply/:id', (req,res,next) => {
+    const {content, user} = req.body
+    Message.findByIdAndUpdate(req.params.id,{$push:{message:{content,user}}}, {new:true})
+    .then(message =>{
+      console.log(message)
+      res.status(200).json(message)})
+    .catch(err => res.json(err))
+  })
+
+  //send client ibformation
+  router.get('/client', (req,res) => {
+    res.json(req.user)
+  })
   
 
     // do something with the document
