@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import service from '../services/picture-upload.js';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card , Spinner} from 'react-bootstrap';
 import EditProfile from './EditProfile';
 import { Link } from 'react-router-dom'
 
@@ -135,8 +135,14 @@ handleFileUpload = e => {
   
 
   render() {
-    if (!this.state.user) return <h3>Loading ...</h3>
-
+    if (!this.state.user) 
+    return (
+        <div className='spinner'>
+        <Spinner animation="border" role="status" >
+        <span className="sr-only">Loading...</span>
+        </Spinner>
+        </div>
+    )
     return ( 
          <>
 

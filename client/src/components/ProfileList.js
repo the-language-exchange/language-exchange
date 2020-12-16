@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './SideBar/SideBar'
-import { Card} from 'react-bootstrap'
+import { Card, Spinner} from 'react-bootstrap'
+
 
 
 
@@ -30,7 +31,15 @@ export default class ProfileList extends Component {
   }
 
   render() {
-    if (!this.state.users) return <h3>Loading ...</h3>
+    if (!this.state.users) 
+    return 
+
+    <div className='spinner'>
+    <Spinner animation="border" role="status" >
+    <span className="sr-only">Loading...</span>
+    </Spinner>
+    </div>
+
     return (
       <>
       <div>

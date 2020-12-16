@@ -5,6 +5,7 @@ import {Card , Button, Form, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 // import axios from 'axios';
 
+
 export default class Messages extends Component {
   state = {
     content : '',
@@ -85,13 +86,22 @@ export default class Messages extends Component {
           <Card.Header>Message from Username A</Card.Header>
             <Card.Body>
             <Card.Text>
+            <div class="talk-bubble-left tri-right round left-in">
+            <div class="talktext-left">     
             With supporting text below as a natural lead-in to additional content.
             <p style={{fontSize: '10px'}}>Wrote by Sender</p>
-            </Card.Text>     
-            <Card.Text>
+            </div>
+            </div>
+            </Card.Text> 
+            <Card.Text >
+            <div class="talk-bubble-right tri-right round right-in">
+            <div class="talktext-right">
             With supporting text below as a natural lead-in to additional content.
             <p style={{fontSize: '10px'}}>Wrote by Receiver</p>
+              </div>
+              </div>
             </Card.Text>     
+              
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor='content'> </Form.Label>

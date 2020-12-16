@@ -75,10 +75,6 @@ export default class ProfileDetails extends Component {
                 <Card.Text>
                   <p><b>Skills:</b> {this.state.skills.join(', ')}</p>
                   <p><b>Interests:</b> {this.state.interests.join(', ')}</p>
-                  {/* <p><b>Age: </b>{this.state.age}</p>
-                  <p><b>Country: </b>{this.state.country}</p>
-                  <p><b>Languages I speak: </b>{this.state.languagesSpoken.join(', ')}</p>
-                  <p><b>Learning: </b>{this.state.languagesLearn.join(', ')}</p> */}
                   <p><b>Education: </b>{this.state.education} </p> 
                   <p><b>About: </b>{this.state.about}</p>
                   
