@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './SideBar/SideBar'
 import { Card} from 'react-bootstrap'
-import SideDemo from './SideBar/SideDemo'
+
 
 
 export default class ProfileList extends Component {

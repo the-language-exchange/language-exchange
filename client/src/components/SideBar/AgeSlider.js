@@ -6,6 +6,8 @@ import Slider from '@material-ui/core/Slider';
 const useStyles = makeStyles({
   root: {
     width: 200,
+   marginLeft:"20px",
+   marginTop:"8px"
   },
 });
 

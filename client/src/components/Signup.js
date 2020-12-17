@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
 import service from '../services/picture-upload.js';
 import CountryList from './SideBar/CountryList'
-// import LanguageList from './SideBar/LanguageList'
+import LanguageSignup from './LanguageSignup'
 
 export default class Signup extends Component {
 
@@ -162,7 +162,7 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-
+    
           <Form.Group>
             <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
             <Form.Control
@@ -193,6 +193,7 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+          
           <Form.Group>
             <Form.Label htmlFor='interests'>What are you interested in? </Form.Label>
             <Form.Control
