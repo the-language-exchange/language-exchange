@@ -3,7 +3,12 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
 import service from '../services/picture-upload.js';
 import CountryList from './SideBar/CountryList'
-import LanguageSignup from './LanguageSignup'
+
+
+
+
+// const data = [{value: language, selected : true}]
+// console.log(language)
 
 export default class Signup extends Component {
 
@@ -79,6 +84,11 @@ export default class Signup extends Component {
       });
   }
 
+  getSelectedItems = (events) => {
+    console.log(events)
+  }
+
+
   render() {
     return (
       <div className = 'signupDiv'>
@@ -115,8 +125,8 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          {/* Country Selector */}
-
+      
+ 
           <Form.Group>
             <Form.Label htmlFor='country'>Country: </Form.Label>
             <Form.Control
@@ -163,6 +173,9 @@ export default class Signup extends Component {
             />
           </Form.Group>
     
+
+       
+  
           <Form.Group>
             <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
             <Form.Control
@@ -206,6 +219,7 @@ export default class Signup extends Component {
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
+            <div className='uploadClass'>
             <Form.Control
               type='file'
               name='picture'
@@ -213,6 +227,7 @@ export default class Signup extends Component {
               //value={this.state.picture}
               onChange={this.handleFileUpload}
             />
+            </div>
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor='about'>Introduce yourself: </Form.Label>
@@ -224,16 +239,21 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+          
           <Form.Group>
             <Form.Label htmlFor='age'>How old are you? </Form.Label>
+            <div className='ageClass'>
             <Form.Control
               type='number'
               name='age'
               id='age'
+              
               value={this.state.age}
               onChange={this.handleChange}
             />
+             </div>
           </Form.Group>
+         
 
           {this.state.success && (
             <Alert variant='danger'>{this.state.success}</Alert>

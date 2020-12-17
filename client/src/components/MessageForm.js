@@ -44,7 +44,7 @@ export default class MessageForm extends Component {
       <div  className='messageFormProfile'>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
-                  <Form.Label htmlFor='content'>Send a Message: </Form.Label>
+                  <Form.Label htmlFor='content'><p>Send a Message:</p> </Form.Label>
                   <Form.Control
                     type='text'
                     name='content'
@@ -56,7 +56,7 @@ export default class MessageForm extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
-                <Button type='submit'>Send</Button>
+                <Button className='btn' type='submit'>Send</Button>
                 </Form>
       </div>
       </>
