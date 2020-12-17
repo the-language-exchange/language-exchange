@@ -101,6 +101,7 @@ export default class EditProfile extends Component {
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor='picture'>Upload Profile Picture: </Form.Label>
+            <div className='uploadClass'>
             <Form.Control
               type='file'
               name='picture'
@@ -108,6 +109,7 @@ export default class EditProfile extends Component {
               // value={this.props.picture}
               onChange={event => this.props.handleFileUpload (event)}
             />
+            </div>
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor='about'>Introduce yourself: </Form.Label>
@@ -119,8 +121,10 @@ export default class EditProfile extends Component {
               onChange={this.props.handleChange}
             />
           </Form.Group>
+          
           <Form.Group>
             <Form.Label htmlFor='age'>How old are you? </Form.Label>
+            <div class='ageClass'>
             <Form.Control
               type='number'
               name='age'
@@ -128,7 +132,9 @@ export default class EditProfile extends Component {
               value={this.props.age}
               onChange={this.props.handleChange}
             />
+             </div>
           </Form.Group>
+         
           <Button type='submit'>Update Profile</Button>
         </Form>
       </div>
