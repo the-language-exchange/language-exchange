@@ -40,8 +40,12 @@ export default class Reply extends Component {
   }*/
   render() {
     return (
-      <div>
-      <Form onSubmit={this.handleSubmit}>
+      <>
+
+      <div className='messageFormInbox' >
+      <hr></hr>
+
+      <Form onSubmit={this.handleSubmit} > 
                 <Form.Group>
                   <Form.Label htmlFor='content'> </Form.Label>
                   <Form.Control
@@ -57,7 +61,9 @@ export default class Reply extends Component {
                 </Form.Group>
                 <Button type='submit'>Send</Button>
         </Form>
+      
       </div>
+      </>
     )
   }
 }

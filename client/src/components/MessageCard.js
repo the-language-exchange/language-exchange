@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Card } from 'react-bootstrap';
 import Reply from './Reply';
 import axios from 'axios'
+
 export default class MessageCard extends Component {
 
   state = {
@@ -37,9 +38,9 @@ export default class MessageCard extends Component {
     return (
       <>
       <div className='messagesCenter'>
-        <Card className="text-center">
-          <Card.Header>Message from {null}</Card.Header>
-            <Card.Body>
+        <Card className="message-card">
+          <Card.Header>Messages</Card.Header>
+            <Card.Body className='scroller'>
              {/*this.state.allMessages.map((data) => data._doc.message.map((message)=> {
                return (
                  <div>
@@ -52,7 +53,7 @@ export default class MessageCard extends Component {
              } ))*/ this.state.clickedMessage && this.state.clickedMessage.map(message => {
                return(
                  <div>
-                 <Card.Text>
+                 <Card.Text >
                  <div className= {this.state.client.username === message.user.username  ?  "talk-bubble-right tri-right round right-in" : "talk-bubble-left tri-right round left-in" }>
                  <div className= {this.state.client.username === message.user.username  ?  "talktext-right" : "talktext-left" } >
                  {message.content}
@@ -72,10 +73,14 @@ export default class MessageCard extends Component {
             <p style={{fontSize: '10px'}}>Wrote by {message.user.username}</p>
             </div>
             </div>
+            
             </Card.Text>   */}
-               <Reply replyMessage = {this.props.replyMessage} messageID = {this.props.messageID} />   
+
                </Card.Body>
-               <Card.Footer className="text-muted">2 days ago</Card.Footer>
+
+               <Reply replyMessage = {this.props.replyMessage} messageID = {this.props.messageID} />   
+
+
                </Card>
            </div>
 

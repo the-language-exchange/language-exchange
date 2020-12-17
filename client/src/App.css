@@ -71,21 +71,16 @@
   flex-wrap: wrap;
 }
 
-.card {
+.profile-list-card {
   border: solid 2px;
   border-color: #e2fdff;
   border-radius: 2px;
   margin-bottom: 20px;
   height: 98%;
   padding: 1.5px;
+  /* padding: 50px 0; */
 }
 
-.card-img-top {
-  border: solid 0.5px;
-  border-color: #e2fdff;
-  object-fit: cover;
-  border-radius: 5px;
-}
 .profile-list-card:hover{
   border: solid 1.5px;
   border-color:  #f8fafa;
@@ -93,9 +88,16 @@
   border-radius: 5px;
 }
 
+
+.card-img-top {
+  border: solid 0.5px;
+  border-color: #e2fdff;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .card-body {
   background-color: #e2fdff;
-  padding: 50px 0;
 }
 
 .card-title {
@@ -166,7 +168,32 @@ Card.Img {
 
 .signupDiv{
   margin: auto;
-  width: 300px;
+  width: 400px;
+  padding: 20px;
+  background-color: #e2fdff;
+}
+.ageClass{
+  margin: auto;
+  width: 70px;
+}
+.uploadClass {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 3px;
+  background-color: white;
+  margin: auto;
+  width: 350px;
+}
+
+.message-list{
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  color: red;
+}
+
+.list-group-item{
+  background-color: red ;
+  color: red;
 }
 
 .loginDiv{
@@ -174,15 +201,6 @@ Card.Img {
   width: 300px;
 }
 
-.messagesInbox{
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-  align-content: stretch;
-  margin-top: 10px;
-}
 
 .profile-box{
   display: flex;
@@ -221,10 +239,40 @@ Card.Img {
 
 }
 
-.messageFormProfile{
+.messagesInbox{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+  align-content: stretch;
+  margin-top: 10px;
+
+}
+
+.messageFormProfile {
   color: black;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   background-color: #e2fdff;
+}
+
+.messageFormInbox {
+  color: black;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+ 
+.message-card {
+  background-color: #e2fdff;
+  width: 400px;
+  margin-bottom: 10px;
+}
+/* ////////SCROLL BAR ////////////  */
+
+.scroller {
+  height: 300px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 .btn.btn-primary {
@@ -240,6 +288,8 @@ Card.Img {
   margin-top: 50px;
   color: white;
 }
+
+
 
 /* ////// BUBBLES */
 
@@ -258,7 +308,7 @@ Card.Img {
   position: relative;
 	width: 300px;
 	height: auto;
-	background-color: lightyellow;
+	background-color: white;
 }
 
 .border {
@@ -337,6 +387,7 @@ Card.Img {
   border: 12px solid;
 	border-color: lightyellow transparent transparent lightyellow;
 }
+
 /* Right triangle placed top right flush. */
 
 .tri-right.border.right-top:before {
@@ -389,7 +440,7 @@ Card.Img {
   top: 38px;
 	bottom: auto;
 	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
+	border-color: white white transparent transparent;
 }
 
 
