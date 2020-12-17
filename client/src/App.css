@@ -69,27 +69,16 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-
 }
-
-
 
 .card {
   border: solid 2px;
   border-color: #e2fdff;
   border-radius: 2px;
   margin-bottom: 20px;
-  color: #e2fdff;
   height: 98%;
-  padding: 1px;
+  padding: 1.5px;
 }
-
-.card:hover {
-  border: solid 2px;
-  border-color : #e2fdff;
-  border-radius: 4px;
-}
-
 
 .card-img-top {
   border: solid 0.5px;
@@ -97,13 +86,17 @@
   object-fit: cover;
   border-radius: 5px;
 }
+.profile-list-card:hover{
+  border: solid 1.5px;
+  border-color:  #f8fafa;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 .card-body {
   background-color: #e2fdff;
   padding: 50px 0;
-  
 }
-
 
 .card-title {
   color: #5465ff;
@@ -125,8 +118,6 @@ Card.Img {
   max-width: 100px;
 }
 
-
-
 .welcome-left {
   display: flex;
   justify-content: row;
@@ -137,6 +128,19 @@ Card.Img {
 .welcome {
   padding-top: 20px;
 }
+
+.exchangeWhite{
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background-color: #5465ff;
+  border: 1px solid #5465ff;
+  border-radius: 70px;
+  height: 50%;
+  padding: 5px;
+}
+
 
 .h2 {
   background-color: #bfd7ff; 
@@ -176,7 +180,8 @@ Card.Img {
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: stretch;
-	align-content: stretch;
+  align-content: stretch;
+  margin-top: 10px;
 }
 
 .profile-box{
@@ -220,7 +225,6 @@ Card.Img {
   color: black;
   padding: 10px;
   background-color: #e2fdff;
-
 }
 
 .btn.btn-primary {
@@ -256,14 +260,14 @@ Card.Img {
 	height: auto;
 	background-color: lightyellow;
 }
-.border{
+
+.border {
   border: 8px solid #666;
 }
 .round{
   border-radius: 30px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
-
 }
 
 /* Right triangle placed top left flush. */
@@ -360,7 +364,6 @@ Card.Img {
 	border: 20px solid;
 	border-color: lightyellow transparent transparent transparent;
 } 
-
 
 /* Right triangle, left side slightly down */
 /* LEFT TRIANGLE */

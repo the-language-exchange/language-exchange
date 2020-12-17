@@ -32,7 +32,6 @@ export default class ProfileList extends Component {
   render() {
     if (!this.state.users) 
     return 
-
     <div className='spinner'>
     <Spinner animation="border" role="status" >
     <span className="sr-only">Loading...</span>
@@ -43,7 +42,9 @@ export default class ProfileList extends Component {
       <>
       <div>
       <div className='welcome-left'>
-      <img  style={{ width: '10rem', backgroundColor: '#5465ff' }} alt='exchangeWhite' src={exchangeWhite}/>
+      <div className='exchangeWhite' >
+      <img  style={{width: '8rem'}} alt='exchangeWhite' src={exchangeWhite}/>
+      </div>
       <div className='welcome'>
       <h2 className='h2'> Welcome to The Language Exchange App</h2>
       <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
@@ -54,9 +55,9 @@ export default class ProfileList extends Component {
 
       <div className='users-container'>
       {this.state.users.map(user => {
-        return(
+        return (
         <div className='profile-list' key={user._id}>
-          <Card style={{ width: '18rem' }}>
+          <Card style={{ width: '18rem' }} className='profile-list-card'>
             <Card.Img variant="top" src={user.picture} style={{ height: '18rem' }}/>
             <Card.Body>
               <Card.Title>
