@@ -6,6 +6,7 @@ export default class Reply extends Component {
   state = {
     content:'',
     clientID:null,
+    username:null,
     clicks:0
   }
 
@@ -19,7 +20,7 @@ export default class Reply extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.setState({clicks:this.state.clicks+1})
-    this.props.replyMessage({user:this.state.clientID, content:this.state.content})
+    this.props.replyMessage({user:{username:this.state.username}, content:this.state.content})
     this.sendData()
   }
   handleChange = (event) => {
@@ -28,7 +29,7 @@ export default class Reply extends Component {
 
   componentDidMount() {
     axios.get('/api/client')
-    .then(res => this.setState({clientID:res.data._id}))
+    .then(res => this.setState({clientID:res.data._id, username:res.data.username}))
   }
 
   /*componentDidUpdate(prevProps, prevState) {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './SideBar/SideBar'
 import { Card} from 'react-bootstrap'
-
+import SideDemo from './SideBar/SideDemo'
 
 
 export default class ProfileList extends Component {
@@ -37,12 +37,15 @@ export default class ProfileList extends Component {
       <>
       <div>
       <SideBar updateData = {this.updateData} />
+
       <div className='welcome'>
       <h2 className='h2'> Welcome to The Language Exchange App</h2>
       <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
       </div>
-      <SideBar updateData = {this.updateData} />
+      
+     
       <div className='users-container'>
+    
       {this.state.users.map(user => {
         return(
         <div className='profile-list' key={user._id}>

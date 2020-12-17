@@ -2,15 +2,26 @@ import React, { Component } from 'react'
 import {Card } from 'react-bootstrap';
 import Reply from './Reply'
 export default class MessageCard extends Component {
+
+  state = {
+    clickedMessage: this.props.clickedMessage
+  }
+  componentDidUpdate(prevProps){
+    if(prevProps.clickedMessage !== this.props.clickedMessage){
+        this.setState({          
+            clickedMessage: this.props.clickedMessage
+        });
+    }
+}
   
   render() {
-    console.log(this.props.clickedMessage, " cardmessage")
+    console.log(this.state.clickedMessage, " cardmessage")
     return (
       <div className='messagesCenter'>
         <Card className="text-center">
           <Card.Header>Message from {null}</Card.Header>
             <Card.Body>
-             {/*this.props.allMessages.map((data) => data._doc.message.map((message)=> {
+             {/*this.state.allMessages.map((data) => data._doc.message.map((message)=> {
                return (
                  <div>
                  <Card.Text>
@@ -19,7 +30,7 @@ export default class MessageCard extends Component {
                 </Card.Text>  
                  </div>
                )
-             } ))*/ this.props.clickedMessage && this.props.clickedMessage.map(message => {
+             } ))*/ this.state.clickedMessage && this.state.clickedMessage.map(message => {
                return(
                  <div>
                  <Card.Text>
