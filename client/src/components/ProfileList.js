@@ -48,8 +48,9 @@ export default class ProfileList extends Component {
       <SideBar updateData = {this.updateData} />
 
       <div className='welcome'>
-      <h2 className='h2'> Welcome to The Language Exchange App</h2>
-      <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
+      <h2 className='h2'> Welcome to The Language Exchange</h2>
+      <p className='welcome-text'>Find language tandems from all over the world.</p>
+      <p className='welcome-text'>Exchange your skills and share your interests.</p>
       <hr></hr>
       </div>
       </div>   
