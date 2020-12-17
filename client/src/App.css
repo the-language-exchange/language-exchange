@@ -129,15 +129,15 @@ Card.Img {
   padding-top: 20px;
 }
 
-.exchangeWhite{
+.chatLogo{
   margin-top: 6px;
   margin-right: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
-  background-color: #5465ff;
+  margin-left: 50px;
+  /* background-color: #5465ff;
   border: 1px solid #5465ff;
-  border-radius: 70px;
-  height: 50%;
+  border-radius: 70px; */
+  /* height: 80%; */
   padding: 5px;
 }
 
