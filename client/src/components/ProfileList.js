@@ -43,7 +43,7 @@ export default class ProfileList extends Component {
       <div>
       <div className='welcome-left'>
       <div className='chatLogo' >
-      <img  style={{width: '8rem'}} alt='chatLogo' src={chatLogo}/>
+      <img  style={{width: '12rem'}} alt='chatLogo' src={chatLogo}/>
       </div>
       <SideBar updateData = {this.updateData} />
 

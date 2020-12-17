@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MessageList from './MessageList'
 import MessageCard from './MessageCard'
+import { Spinner} from 'react-bootstrap';
 
 // import axios from 'axios';
 
@@ -55,7 +56,11 @@ export default class Messages extends Component {
 
 
   render() {
-    if(!this.state.allMessages) return <p>Loading...</p>
+    if(!this.state.allMessages) return (
+    <Spinner animation="border" role="status" >
+    <span className="sr-only">Loading...</span>
+    </Spinner>
+    )
     return (
     <div className='messagesInbox'>
      <MessageList 
