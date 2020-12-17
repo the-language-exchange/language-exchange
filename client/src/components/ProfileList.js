@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import SideBar from './SideBar/SideBar';
 import { Card, Spinner} from 'react-bootstrap';
-import exchangeWhite from './Assets/exchangeWhite.png';
+import chatLogo from './Assets/chatLogo.png';
 
 
 export default class ProfileList extends Component {
@@ -42,14 +42,15 @@ export default class ProfileList extends Component {
       <>
       <div>
       <div className='welcome-left'>
-      <div className='exchangeWhite' >
-      <img  style={{width: '8rem'}} alt='exchangeWhite' src={exchangeWhite}/>
+      <div className='chatLogo' >
+      <img  style={{width: '8rem'}} alt='chatLogo' src={chatLogo}/>
       </div>
       <SideBar updateData = {this.updateData} />
 
       <div className='welcome'>
-      <h2 className='h2'> Welcome to The Language Exchange App</h2>
-      <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
+      <h2 className='h2'> Welcome to The Language Exchange</h2>
+      <p className='welcome-text'>Find language tandems from all over the world.</p>
+      <p className='welcome-text'>Exchange your skills and share your interests.</p>
       <hr></hr>
       </div>
       </div>   
