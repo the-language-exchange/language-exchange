@@ -93,7 +93,7 @@ function SideBar(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-     <Typography paragraph>Hello</Typography>
+     <Typography paragraph>Find an Exchange Partner</Typography>
       <Divider />
       <List>
         

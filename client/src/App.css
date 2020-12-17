@@ -29,7 +29,7 @@
 }
 
 .nav {
-  background-color: #788bff;
+  background-color: #6777df;
 }
 
 .nav a {
@@ -60,7 +60,7 @@
 
 
 .users-container {
-  background-color: #9bb1ff; 
+  /* background-color: #9bb1ff;  */
   color: #023047;
   margin-left: 240px;
   padding: 30px;
@@ -71,18 +71,13 @@
   flex-wrap: wrap;
 }
 
-body {
-  color: #ffb703;
-}
-
-
-
 .card {
-  border: solid 0.5px;
+  border: solid 2px;
   border-color: #e2fdff;
-  border-radius: 60px;
+  border-radius: 2px;
   margin-bottom: 20px;
-  color: #e2fdff;
+  height: 98%;
+  padding: 1.5px;
 }
 
 .card-img-top {
@@ -91,13 +86,17 @@ body {
   object-fit: cover;
   border-radius: 5px;
 }
+.profile-list-card:hover{
+  border: solid 1.5px;
+  border-color:  #f8fafa;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 .card-body {
-  color: #e2fdff;
   background-color: #e2fdff;
   padding: 50px 0;
 }
-
 
 .card-title {
   color: #5465ff;
@@ -108,24 +107,46 @@ body {
 }
 
 .button {
-  color: #023047;
+  color:   #5465ff;
 }
-
+.button:hover {
+  color: #5465ff;
+}
 
 
 Card.Img {
   max-width: 100px;
 }
 
-
-.welcome {
+.welcome-left {
+  display: flex;
+  justify-content: row;
   background-color: #bfd7ff; 
   margin-left: 240px;
   padding-top: 20px;
 }
+.welcome {
+  padding-top: 20px;
+}
+
+.exchangeWhite{
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background-color: #5465ff;
+  border: 1px solid #5465ff;
+  border-radius: 70px;
+  height: 50%;
+  padding: 5px;
+}
+
 
 .h2 {
   background-color: #bfd7ff; 
+  color: #5465ff;
+}
+.h1{
   color: #5465ff;
 }
 
@@ -137,8 +158,10 @@ Card.Img {
 }
   
 .editFormDiv{
-  margin: auto;
+  padding: 20px;
+  margin: 10px auto;
   width: 400px;
+  background-color: #e2fdff;
 }
 
 .signupDiv{
@@ -157,7 +180,8 @@ Card.Img {
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: stretch;
-	align-content: stretch;
+  align-content: stretch;
+  margin-top: 10px;
 }
 
 .profile-box{
@@ -170,32 +194,219 @@ Card.Img {
   margin: auto;
   padding: 10px;
   max-width: 600px;
+  border-radius: 5px;
+
 }
 .profile-detail{
   text-align: left;
 }
 .profile-box-left{
   margin-right: 10px;
-
 }
 
+.profile-pic {
+  border: solid 0.5px;
+  border-color: #e2fdff;
+  object-fit: cover;
+  border-radius: 5px;
+}
 .profile-sub-info{
+  border: solid 0.3px  #e2fdff;
+  border-radius: 5px;
   padding: 10px;
   text-align: left;
-  font-size: 12px;
- 
-}
-/* .messagesCenter{
-  margin: auto;
-  width: 300px;
-} */
+  font-size: 14px;
+  margin: 10px 0px;
+  background-color: #e2fdff;
 
-/* .text-left{
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-  align-content: stretch;
-  width: 300px;
-} */
+}
+
+.messageFormProfile{
+  color: black;
+  padding: 10px;
+  background-color: #e2fdff;
+}
+
+.btn.btn-primary {
+  background-color:  #5465ff;
+  border:  #5465ff;
+}
+
+.btn.btn-primary:hover {
+  background-color:  #707efa;
+}
+
+.spinner{
+  margin-top: 50px;
+  color: white;
+}
+
+/* ////// BUBBLES */
+
+/* CSS talk bubble */
+.talk-bubble-right {
+	margin: 10px;
+  display: inline-block;
+  position: relative;
+	width: 300px;
+	height: auto;
+	background-color: lightyellow;
+}
+.talk-bubble-left {
+	margin: 10px;
+  display: inline-block;
+  position: relative;
+	width: 300px;
+	height: auto;
+	background-color: lightyellow;
+}
+
+.border {
+  border: 8px solid #666;
+}
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+}
+
+/* Right triangle placed top left flush. */
+.tri-right.border.left-top:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -40px;
+	right: auto;
+  top: -8px;
+	bottom: auto;
+	border: 32px solid;
+	border-color: #666 transparent transparent transparent;
+}
+.tri-right.left-top:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -20px;
+	right: auto;
+  top: 0px;
+	bottom: auto;
+	border: 22px solid;
+	border-color: lightyellow transparent transparent transparent;
+}
+
+/* Right triangle, right side slightly down*/
+/* THIS IS THE ONE */
+.tri-right.border.right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+
+.tri-right.right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 38px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: lightyellow transparent transparent lightyellow;
+}
+
+
+.tri-left.left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 38px;
+	bottom: auto;
+  border: 12px solid;
+	border-color: lightyellow transparent transparent lightyellow;
+}
+/* Right triangle placed top right flush. */
+
+.tri-right.border.right-top:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: -8px;
+	bottom: auto;
+	border: 32px solid;
+	border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.right-top:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 0px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: lightyellow transparent transparent transparent;
+} 
+
+/* Right triangle, left side slightly down */
+/* LEFT TRIANGLE */
+.tri-right.border.left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -40px;
+	right: auto;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -20px;
+	right: auto;
+  top: 38px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: lightyellow lightyellow transparent transparent;
+}
+
+
+/* talk bubble contents */
+.talktext-right{
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+}
+.talktext-left{
+  padding: 1em;
+	text-align: right;
+  line-height: 1.5em;
+}
+.talktext p {
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
