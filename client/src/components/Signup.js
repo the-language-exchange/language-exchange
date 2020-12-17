@@ -144,6 +144,35 @@ export default class Signup extends Component {
           </Form.Group>
 
 
+          {/* <Form.Group>
+            <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
+            <Form.Control
+              type='selector'
+              as='select'
+              multiple
+              name='languagesSpoken'
+              id='languagesSpoken'
+              value={this.state.languagesSpoken}
+              onChange={this.handleChange}
+            >
+             {LanguageList.map(language => {
+                return  (<option value ={language.name}>{language.name}</option>)
+              })}
+
+            </Form.Control>
+          </Form.Group> */}
+
+          <Form.Group>
+            <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
+            <Form.Control
+              type='text'
+              name='languagesSpoken'
+              id='languagesSpoken'
+              value={this.state.languagesSpoken}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+    
 
        
   
@@ -177,6 +206,7 @@ export default class Signup extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+          
           <Form.Group>
             <Form.Label htmlFor='interests'>What are you interested in? </Form.Label>
             <Form.Control

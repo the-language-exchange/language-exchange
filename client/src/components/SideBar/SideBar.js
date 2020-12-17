@@ -71,7 +71,7 @@ function SideBar(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleChange = () => {
+  const handleChange = () => {     //skilss, interest, 
     axios.get('api/users')
     .then(response => {
       const filtered = response.data.filter(obj =>{
