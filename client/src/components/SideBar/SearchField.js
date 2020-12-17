@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
+    
   },
 }));
 
@@ -33,7 +34,8 @@ export default function SearchField(props) {
           </Grid>
           <Grid item>
             <TextField id="input-with-icon-grid"
-            label="Search" 
+            label="Skills and Interests" 
+           margin = "dense"
             value = {skillInterest} 
             onChange = {changeHandler} 
           />
