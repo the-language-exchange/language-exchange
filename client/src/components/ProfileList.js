@@ -45,15 +45,17 @@ export default class ProfileList extends Component {
       <div className='exchangeWhite' >
       <img  style={{width: '8rem'}} alt='exchangeWhite' src={exchangeWhite}/>
       </div>
+      <SideBar updateData = {this.updateData} />
+
       <div className='welcome'>
       <h2 className='h2'> Welcome to The Language Exchange App</h2>
       <p className='welcome-text'>Find language tandems from all over the world. Exchange your skills and share your interests.</p>
       <hr></hr>
       </div>
-      </div>
-      <SideBar updateData = {this.updateData} />
-
+      </div>   
+      
       <div className='users-container'>
+    
       {this.state.users.map(user => {
         return (
         <div className='profile-list' key={user._id}>

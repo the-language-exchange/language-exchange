@@ -66,6 +66,7 @@ function SideBar(props) {
   const [country, setCountry] = React.useState([])
   const [language, setLanguage] = React.useState([])
   const [skillInterest, setSkillInterest] = React.useState('')
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -112,16 +113,18 @@ function SideBar(props) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
+      
+
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+            variant="permanent"
+            
             open={mobileOpen}
-            onClose={handleDrawerToggle}
+           
             classes={{
               paper: classes.drawerPaper,
             }}

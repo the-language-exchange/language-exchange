@@ -3,6 +3,17 @@ import {Card } from 'react-bootstrap';
 import Reply from './Reply';
 import axios from 'axios'
 export default class MessageCard extends Component {
+
+  state = {
+    clickedMessage: this.props.clickedMessage
+  }
+  componentDidUpdate(prevProps){
+    if(prevProps.clickedMessage !== this.props.clickedMessage){
+        this.setState({          
+            clickedMessage: this.props.clickedMessage
+        });
+    }
+}
   
   state = {
     client: ''
@@ -29,7 +40,7 @@ export default class MessageCard extends Component {
         <Card className="text-center">
           <Card.Header>Message from {null}</Card.Header>
             <Card.Body>
-             {/*this.props.allMessages.map((data) => data._doc.message.map((message)=> {
+             {/*this.state.allMessages.map((data) => data._doc.message.map((message)=> {
                return (
                  <div>
                  <Card.Text>
@@ -38,10 +49,7 @@ export default class MessageCard extends Component {
                 </Card.Text>  
                  </div>
                )
-             } ))*/ 
-             this.props.clickedMessage && this.props.clickedMessage.map(message => {
-              console.log(this.state.client.username , message.user.username)
-
+             } ))*/ this.state.clickedMessage && this.state.clickedMessage.map(message => {
                return(
                  <div>
                  <Card.Text>
