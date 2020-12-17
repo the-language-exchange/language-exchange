@@ -14,13 +14,13 @@ export default class MessageList extends Component {
     console.log(this.props.allMessages, "allid")
     return (
       <div>
-      <ListGroup className="text-left">
+      <ListGroup >
       {this.props.allMessages.map(message => {
         const messageID = message._doc._id
         return (<div>
-          <ListGroup.Item>
+          <ListGroup.Item action variant="light" >
           <Link onClick = {() => this.showData(messageID)}>
-          {message.client._id == message._doc.sender._id ?
+          {message.client._id === message._doc.sender._id ?
            message._doc.receiver.username : message._doc.sender.username}
           </Link>
           </ListGroup.Item>
