@@ -126,24 +126,24 @@ Card.Img {
   justify-content: space-between;
   background-color: #bfd7ff; 
   margin-left: 240px;
-  padding-top: 20px;
 }
 
 .welcome {
-  padding-top: 20px;
-  margin-right: 205px;
+  margin-right: 300px;
+  padding-top: 50px;
 }
 
 .chatLogo{
-  margin-top: 6px;
   margin-right: 0;
   margin-bottom: 20px;
   margin-left: 60px;
+  margin-top: 5px;
   /* background-color: #5465ff;
   border: 1px solid #5465ff;
   border-radius: 70px; */
   /* height: 80%; */
   padding: 5px;
+
 }
 
 
@@ -191,13 +191,8 @@ Card.Img {
 .message-list{
   border: 1px solid lightgray;
   border-radius: 3px;
-  color: red;
 }
 
-.list-group-item{
-  background-color: red ;
-  color: red;
-}
 
 .loginDiv{
   margin: auto;
@@ -317,6 +312,7 @@ Card.Img {
 .border {
   border: 8px solid #666;
 }
+
 .round{
   border-radius: 30px;
 	-webkit-border-radius: 30px;
