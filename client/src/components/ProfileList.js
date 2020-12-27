@@ -4,7 +4,8 @@ import axios from 'axios';
 import SideBar from './SideBar/SideBar';
 import { Card, Spinner} from 'react-bootstrap';
 import chatLogo from './Assets/chatLogo.png';
-
+import Navbar from './Navbar'
+import NavbarList from './NavbarList';
 
 export default class ProfileList extends Component {
   state = {
@@ -40,6 +41,7 @@ export default class ProfileList extends Component {
 
     return (
       <>
+      <NavbarList user={this.props.user} setUser={this.props.setUser}/>
       <div>
       <div className='welcome-left'>
       <div className='chatLogo' >

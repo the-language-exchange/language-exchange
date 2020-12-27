@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth.js';
 import service from '../services/picture-upload.js';
+import LanguageSignup from './LanguageSignup'
 import CountryList from './SideBar/CountryList'
 
 
@@ -36,6 +37,8 @@ export default class Signup extends Component {
       [name]: value
     }); 
   };
+
+ 
 
   handleSubmit = event => {
     event.preventDefault();
@@ -126,7 +129,6 @@ export default class Signup extends Component {
             />
           </Form.Group>
       
- 
           <Form.Group>
             <Form.Label htmlFor='country'>Country: </Form.Label>
             <Form.Control
@@ -173,7 +175,15 @@ export default class Signup extends Component {
             />
           </Form.Group>
     
-
+            <Form.Group>
+            <Form.Label htmlFor='LanguagesSignup'>What language/s do you speak fluently? </Form.Label>
+            <LanguageSignup value = {this.state.languagesSpoken} update = {this.}/>
+            </Form.Group>
+         
+            <Form.Group>
+            <Form.Label htmlFor='LanguagesSignup'>What language/s are you learning? </Form.Label>
+            <LanguageSignup value = {this.state.languagesLearn}/>
+            </Form.Group>
        
   
           <Form.Group>

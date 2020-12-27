@@ -48,7 +48,8 @@ class App extends React.Component {
       <Route
         exact
         path='/'
-        component={ProfileList}
+        //component={ProfileList}
+        render ={props => <ProfileList {...props} setUser={this.setUser} user = {this.state.user}/>}
       />
       <Route
         exact

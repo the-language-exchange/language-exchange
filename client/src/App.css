@@ -464,3 +464,35 @@ Card.Img {
   -webkit-margin-after: 0em;
 }
 
+.ui.selection.active.dropdown.ui.selection.active.dropdown {
+  border-color: #80bdff !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.ui.selection.dropdown.ui.selection.dropdown:hover {
+
+  
+}
+
+.ui.selection.dropdown.ui.selection.dropdown {
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+
+.ui.dropdown:not(.button)>.default.text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: #495057 !important;
+  background-color: #fff !important;
+  font-size: 1rem !important;
+  line-height: 1.5;
+  background-clip: padding-box
+}
+
+.profile {
+  position: relative !important;
+  left: 0px;
+  top: -45px;
+}
