@@ -13,13 +13,26 @@ export default class ProfileList extends Component {
   }
 
   getData = () => {
-    axios.get('api/users')
+    /*axios.get('api/users')
     .then(response => {
       this.setState({ 
         users: response.data
       })
     })
+    .catch(err => console.log(err))*/
+    axios.get('api/client')
+    .then(response => response.data._id)
+    .then(ID =>{
+      axios.get('api/users')
+    .then(response => {
+      const filtered = response.data.filter(data => data._id !== ID)
+      this.setState({ 
+        users: filtered
+      })
+    })
     .catch(err => console.log(err))
+
+    } )
   }
 
   updateData = (data) => {

@@ -10,18 +10,21 @@ export default class Reply extends Component {
     clicks:0
   }
 
-   sendData = () => {
-     axios.post(`/api/messages/reply/${this.props.messageID}`, 
-     {content:this.state.content,user:this.state.clientID})
-    .then(res => console.log('succesfully sended'))
+  sendData = async (data) => {
+     return axios.post(`/api/messages/reply/${this.props.messageID}`, 
+     {content:data,user:this.state.clientID})
+    .then(res => true)
     .catch(err => console.log(err))
    }
   
-  handleSubmit = (event) => {
+    handleSubmit = async (event) => {
     event.preventDefault()
-    this.setState({clicks:this.state.clicks+1})
+    const data = this.state.content
+    const response = await this.sendData(data)
     this.props.replyMessage({user:{username:this.state.username}, content:this.state.content})
-    this.sendData()
+    response && this.setState({clicks:this.state.clicks+1, content:''})
+    
+    
   }
   handleChange = (event) => {
     this.setState({content:event.target.value})

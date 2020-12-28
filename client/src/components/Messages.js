@@ -28,7 +28,7 @@ export default class Messages extends Component {
   }
 
   getMessage = (messageID) => {
-    const filtered = this.state.allMessages.filter(message => message._doc._id == messageID)
+    const filtered = this.state.allMessages.filter(message => message._doc._id === messageID)
     console.log(filtered, ' msg filtered')
     this.setState({messageID, clickedMessage:filtered[0]._doc.message})
   }

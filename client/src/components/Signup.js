@@ -38,7 +38,11 @@ export default class Signup extends Component {
     }); 
   };
 
- 
+ handleLanguage = (event, data) => {
+   this.setState({
+     [data.name]:data.value
+   })
+ }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -164,38 +168,28 @@ export default class Signup extends Component {
             </Form.Control>
           </Form.Group> */}
 
-          <Form.Group>
-            <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
-            <Form.Control
-              type='text'
-              name='languagesSpoken'
-              id='languagesSpoken'
-              value={this.state.languagesSpoken}
-              onChange={this.handleChange}
-            />
-          </Form.Group>
+         
     
             <Form.Group>
             <Form.Label htmlFor='LanguagesSignup'>What language/s do you speak fluently? </Form.Label>
-            <LanguageSignup value = {this.state.languagesSpoken} update = {this.}/>
+            <LanguageSignup 
+            value = {this.state.languagesSpoken} 
+            name= {'languagesLearn'} 
+            update = {this.handleLanguage}
+            />
             </Form.Group>
          
             <Form.Group>
             <Form.Label htmlFor='LanguagesSignup'>What language/s are you learning? </Form.Label>
-            <LanguageSignup value = {this.state.languagesLearn}/>
+            <LanguageSignup 
+            value = {this.state.languagesLearn} 
+            name = {'languagesSpoken'}
+            update = {this.handleLanguage}
+            />
             </Form.Group>
        
   
-          <Form.Group>
-            <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
-            <Form.Control
-              type='text'
-              name='languagesLearn'
-              id='languagesLearn'
-              value={this.state.languagesLearn}
-              onChange={this.handleChange}
-            />
-          </Form.Group>
+         
           <Form.Group>
             <Form.Label htmlFor='education'>Education or Profession: </Form.Label>
             <Form.Control

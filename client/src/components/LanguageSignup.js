@@ -1,22 +1,19 @@
-import React ,{ useState } from 'react'
+import React from 'react'
 import { Dropdown} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import languages from './SideBar/LanguageList'
 
 
-const LanguageSignup = () => {
-
-  const [val, setVal] = useState([])
-  const Handler = (e, data) => setVal(data.value)
-  console.log(val)
+const LanguageSignup = (props) => {
   return (
     <>
     <Dropdown 
     placeholder = 'Choose Your Language'
+    name={props.name}
     fluid multiple selection 
     options={languages.map(obj => ({...obj, key:obj.code, text:obj.name, value:obj.name }))}
-    onChange = {Handler}
-    defaultValue= {val}
+    onChange = {props.update}
+    defaultValue= {props.value}
      />
      </>
   )

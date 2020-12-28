@@ -496,3 +496,19 @@ Card.Img {
   left: 0px;
   top: -45px;
 }
+
+.ui.selection.dropdown.ui.selection.dropdown.languageSideBar {
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  margin-top: 28px;
+  margin-bottom: 6px;
+  margin-left: 22px;
+}
+
+.ui.fluid.dropdown.languageSideBar {
+  display: block;
+  width: 80%;
+  min-width: 0;
+}

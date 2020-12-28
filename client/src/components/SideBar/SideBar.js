@@ -22,6 +22,7 @@ import CountryField from './CountryField'
 import AgeSlider from './AgeSlider';
 import axios from 'axios'
 import _ from 'lodash'
+import LanguageSideBar from './LanguageSideBar'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -78,10 +79,10 @@ function SideBar(props) {
         console.log(skillInterest)
         return(
           (obj.age >= age[0] && obj.age <= age[1]) && 
-          (language.length == 0 ? true: _.intersection(obj.languagesSpoken, language).length !== 0 )
+          (language.length === 0 ? true: _.intersection(obj.languagesSpoken, language).length !== 0 )
           && (obj.skills.join(' ').toLowerCase().includes(skillInterest.toLowerCase())   
             || obj.interests.join(' ').toLowerCase().includes(skillInterest.toLowerCase()) 
-          ) && (country.length == 0 ? true: country.includes(obj.country))
+          ) && (country.length === 0 ? true: country.includes(obj.country))
         )
       } )
      props.updateData(filtered)
@@ -98,7 +99,8 @@ function SideBar(props) {
       <List>
         
         <SearchField handleChange = {handleChange} skillInterest = {skillInterest} setSkillInterest = {setSkillInterest}/>
-        <LanguageField handleChange = {handleChange} language= {language} setLanguage = {setLanguage} />
+       
+        <LanguageSideBar handleChange = {handleChange} language = {language} setLanguage = {setLanguage} />
         <CountryField handleChange = {handleChange} setCountry = {setCountry} country = {country} />
         <AgeSlider age = {age} setAge = {setAge} handleChange = {handleChange} />
       
