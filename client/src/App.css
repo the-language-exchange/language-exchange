@@ -491,11 +491,6 @@ Card.Img {
   background-clip: padding-box
 }
 
-.profile {
-  position: relative !important;
-  left: 0px;
-  top: -45px;
-}
 
 .ui.selection.dropdown.ui.selection.dropdown.languageSideBar {
   border: 1px solid #ced4da !important;

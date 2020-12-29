@@ -54,7 +54,7 @@ export default class ProfileList extends Component {
 
     return (
       <>
-      <NavbarList user={this.props.user} setUser={this.props.setUser}/>
+     
       <div>
       <div className='welcome-left'>
       <div className='chatLogo' >
