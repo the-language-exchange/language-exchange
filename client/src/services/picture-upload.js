@@ -7,7 +7,7 @@ const errorHandler = err => {
 };
 
 const Axios = axios.create({
-  baseURL: 'http://localhost:5555',
+  baseURL: 'http://localhost:5000',
   /* other custom settings */
 });
 

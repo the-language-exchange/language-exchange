@@ -1,30 +1,30 @@
 import React, {useState} from 'react'
-import languages from './LanguageList'
+import countries from './CountryList'
 import { Dropdown} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 
-export default function LanguageSideBar(props) {
-  const [language, setLanguage] = React.useState('')
+export default function CountrySideBar(props) {
+  const [country, setCountry] = React.useState('')
 
   const changeHandler = (event, data) => {
-    setLanguage(data.value)
-    props.setLanguage(data.value)
+    setCountry(data.value)
+    props.setCountry(data.value)
     //props.handleChange()
    }
 
    React.useEffect(() => {
     props.handleChange()
-   },[props.language])
+   },[props.country])
   return (
     <div>
     <Dropdown 
-    placeholder = 'Choose The Language'
+    placeholder = 'Choose The Country'
     className = 'languageSideBar'
     name={props.name}
     fluid multiple selection 
-    options={languages.map(obj => ({...obj, key:obj.code, text:obj.name, value:obj.name }))}
+    options={countries.map(obj => ({...obj, key:obj.code, text:obj.name, value:obj.name }))}
     onChange = {changeHandler}
-    defaultValue= {language}
+    defaultValue= {country}
      />
     </div>
   )

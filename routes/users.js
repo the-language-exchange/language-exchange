@@ -32,10 +32,10 @@ router.get('/', (req, res, next) =>{
   
 //update users
 router.put('/:id', (req, res, next) => {
-  const {  username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = req.body;
+  const {  username, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age } = req.body;
   User.findByIdAndUpdate(
     req.params.id,
-    { username, password, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age },
+    { username, email, country, languagesSpoken, languagesLearn, education, skills, interests, picture, about, age },
     // this ensures that we are getting the updated document as a return 
     { new: true }
   )

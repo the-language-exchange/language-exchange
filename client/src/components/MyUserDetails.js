@@ -72,10 +72,15 @@ export default class MyUserDetails extends Component {
     })
   }
 
-
+  handleLanguage = (event, data) => {
+    this.setState({
+      [data.name]:data.value
+    })
+  }
   handleSubmit = event => {
     event.preventDefault();
     const id = this.props.match.params.id;
+    console.log('pic upload', this.state.imageURL)
     axios.put(`/api/users/${id}`, {
       username: this.state.username,
       email: this.state.email,
@@ -191,6 +196,7 @@ handleFileUpload = e => {
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 handleFileUpload={this.handleFileUpload}
+                handleLanguage={this.handleLanguage }
               />
               )}
 

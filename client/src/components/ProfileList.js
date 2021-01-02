@@ -5,7 +5,7 @@ import SideBar from './SideBar/SideBar';
 import { Card, Spinner} from 'react-bootstrap';
 import chatLogo from './Assets/chatLogo.png';
 import Navbar from './Navbar'
-import NavbarList from './NavbarList';
+
 
 export default class ProfileList extends Component {
   state = {

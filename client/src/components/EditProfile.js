@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap';
+import { Dropdown } from 'semantic-ui-react';
 import CountryList from './SideBar/CountryList'
+import languages from './SideBar/LanguageList'
 
 export default class EditProfile extends Component {
+
+  
 
  
 
@@ -51,24 +55,32 @@ export default class EditProfile extends Component {
 
           <Form.Group>
             <Form.Label htmlFor='languagesSpoken'>What language/s do you speak fluently? </Form.Label>
-            <Form.Control
-              type='text'
-              name='languagesSpoken'
-              id='languagesSpoken'
-              value={this.props.languagesSpoken}
-              onChange={this.props.handleChange}
+            <Dropdown
+            placeholder = 'Choose Your Language'
+            name='languagesSpoken'
+            defaultValue = {this.props.languagesSpoken}
+            fluid multiple selection 
+             options={languages.map(obj => ({...obj, key:obj.code, text:obj.name, value:obj.name }))}
+            onChange = {this.props.handleLanguage}
             />
           </Form.Group>
-          <Form.Group>
+          
+          
+          
             <Form.Label htmlFor='languagesLearn'>What language/s are you learning? </Form.Label>
-            <Form.Control
-              type='text'
-              name='languagesLearn'
-              id='languagesLearn'
-              value={this.props.languagesLearn}
-              onChange={this.props.handleChange}
+            <Dropdown
+            placeholder = 'Choose Your Language'
+            name= 'languagesLearn'
+            defaultValue = {this.props.languagesLearn}
+            fluid multiple selection 
+             options={languages.map(obj => ({...obj, key:obj.code, text:obj.name, value:obj.name }))}
+            onChange = {this.props.handleLanguage}
             />
-          </Form.Group>
+          
+          
+          
+          
+          
           <Form.Group>
             <Form.Label htmlFor='education'>Education or Profession: </Form.Label>
             <Form.Control

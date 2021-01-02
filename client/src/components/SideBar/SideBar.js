@@ -23,6 +23,7 @@ import AgeSlider from './AgeSlider';
 import axios from 'axios'
 import _ from 'lodash'
 import LanguageSideBar from './LanguageSideBar'
+import CountrySideBar from './CountrySideBar';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -99,9 +100,8 @@ function SideBar(props) {
       <List>
         
         <SearchField handleChange = {handleChange} skillInterest = {skillInterest} setSkillInterest = {setSkillInterest}/>
-       
         <LanguageSideBar handleChange = {handleChange} language = {language} setLanguage = {setLanguage} />
-        <CountryField handleChange = {handleChange} setCountry = {setCountry} country = {country} />
+        <CountrySideBar handleChange = {handleChange} setCountry = {setCountry} country = {country}/>
         <AgeSlider age = {age} setAge = {setAge} handleChange = {handleChange} />
       
       </List>
