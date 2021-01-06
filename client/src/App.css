@@ -131,7 +131,7 @@ Card.Img {
 
 .welcome {
   padding-top: 20px;
-  margin-right: 205px;
+  margin-right: 200px;
 }
 
 .chatLogo{
@@ -293,7 +293,6 @@ Card.Img {
 }
 
 
-
 /* ////// BUBBLES */
 
 /* CSS talk bubble */
@@ -317,6 +316,7 @@ Card.Img {
 .border {
   border: 8px solid #666;
 }
+
 .round{
   border-radius: 30px;
 	-webkit-border-radius: 30px;
@@ -329,24 +329,26 @@ Card.Img {
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -40px;
+  left: -5px;
 	right: auto;
   top: -8px;
 	bottom: auto;
 	border: 32px solid;
-	border-color: #666 transparent transparent transparent;
+  border-color: #666 transparent transparent transparent;
+  transform: rotateX(180deg);
 }
 .tri-right.left-top:after{
 	content: ' ';
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -20px;
+  left: -5px;
 	right: auto;
   top: 0px;
 	bottom: auto;
 	border: 22px solid;
-	border-color: lightyellow transparent transparent transparent;
+  border-color: lightyellow transparent transparent transparent;
+  transform: rotateX(180deg);
 }
 
 /* Right triangle, right side slightly down*/
@@ -357,11 +359,12 @@ Card.Img {
 	width: 0;
 	height: 0;
   left: auto;
-	right: -40px;
+	right: -5px;
   top: 30px;
 	bottom: auto;
 	border: 20px solid;
-	border-color: #666 transparent transparent #666;
+  border-color: #666 transparent transparent #666;
+  transform: rotateX(180deg);
 }
 
 .tri-right.right-in:after{
@@ -370,11 +373,12 @@ Card.Img {
 	width: 0;
 	height: 0;
   left: auto;
-	right: -20px;
+	right: -5px;
   top: 38px;
 	bottom: auto;
 	border: 12px solid;
-	border-color: lightyellow transparent transparent lightyellow;
+  border-color: lightyellow transparent transparent lightyellow;
+  transform: rotateX(180deg);
 }
 
 
@@ -384,11 +388,13 @@ Card.Img {
 	width: 0;
 	height: 0;
   left: auto;
-	right: -20px;
+	right: -5px;
   top: 38px;
 	bottom: auto;
   border: 12px solid;
-	border-color: lightyellow transparent transparent lightyellow;
+  border-color: lightyellow transparent transparent lightyellow;
+  transform: rotateX(180deg);
+
 }
 
 /* Right triangle placed top right flush. */
@@ -399,11 +405,13 @@ Card.Img {
 	width: 0;
 	height: 0;
   left: auto;
-	right: -40px;
+	right: -5px;
   top: -8px;
 	bottom: auto;
 	border: 32px solid;
-	border-color: #666 transparent transparent transparent;
+  border-color: #666 transparent transparent transparent;
+  transform: rotateX(180deg);
+
 }
 
 .tri-right.right-top:after{
@@ -412,11 +420,13 @@ Card.Img {
 	width: 0;
 	height: 0;
   left: auto;
-	right: -20px;
+	right: -5px;
   top: 0px;
 	bottom: auto;
 	border: 20px solid;
-	border-color: lightyellow transparent transparent transparent;
+  border-color: lightyellow transparent transparent transparent;
+  transform: rotateX(180deg);
+
 } 
 
 /* Right triangle, left side slightly down */
@@ -426,24 +436,28 @@ Card.Img {
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -40px;
+  left: -5px;
 	right: auto;
   top: 30px;
 	bottom: auto;
 	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
+  border-color: #666 #666 transparent transparent;
+  transform: rotateX(180deg);
+
 }
 .tri-right.left-in:after{
 	content: ' ';
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -20px;
+  left: -5px;
 	right: auto;
   top: 38px;
 	bottom: auto;
 	border: 12px solid;
-	border-color: white white transparent transparent;
+  border-color: white white transparent transparent;
+  transform: rotateX(180deg);
+
 }
 
 
@@ -453,16 +467,24 @@ Card.Img {
 	text-align: left;
   line-height: 1.5em;
 }
+
 .talktext-left{
   padding: 1em;
 	text-align: right;
   line-height: 1.5em;
 }
+
 .talktext p {
   /* remove webkit p margins */
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
+
+
+
+
+
+/* ----- */
 
 .ui.selection.active.dropdown.ui.selection.active.dropdown {
   border-color: #80bdff !important;

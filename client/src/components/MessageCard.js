@@ -55,9 +55,9 @@ export default class MessageCard extends Component {
                  <div>
                  <Card.Text >
                  <div className= {this.state.client.username === message.user.username  ?  "talk-bubble-right tri-right round right-in" : "talk-bubble-left tri-right round left-in" }>
-                 <div className= {this.state.client.username === message.user.username  ?  "talktext-right" : "talktext-left" } >
+                 <div className= {this.state.client.username === message.user.username  ?  "talktext-right" : "talktext-left" }>
                  {message.content}
-                 <p style={{fontSize: '10px'}}>Wrote by {message.user.username}</p>
+                 <p style={{fontSize: '10px'}}>Written by {message.user.username}</p>
                 </div>
                 </div>
                 </Card.Text>  
